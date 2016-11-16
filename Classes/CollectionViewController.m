@@ -45,6 +45,17 @@ static NSString *const cellId = @"CollectionViewCell";
     return _layout;
 }
 
+-(CGFloat )itemHeightAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *url = self.dataArray[indexPath.row];
+    CGFloat itemWidth = [self itemWidth];
+    CGFloat itemHeight = [XHWebImageAutoSize imageHeightWithURL:[NSURL URLWithString:url] layoutWidth:itemWidth estimateHeight:200];
+    return itemHeight;
+}
+-(CGFloat )itemWidth
+{
+    return ([UIScreen mainScreen].bounds.size.width-3*5)/3.0;
+}
 -(NSArray *)dataArray{
     if(_dataArray==nil)
     {
@@ -80,18 +91,6 @@ static NSString *const cellId = @"CollectionViewCell";
     }];
     
     return cell;
-}
-
--(CGFloat )itemHeightAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *url = self.dataArray[indexPath.row];
-    CGFloat itemWidth = [self itemWidth];
-    CGFloat itemHeight = [XHWebImageAutoSize imageHeightWithURL:[NSURL URLWithString:url] layoutWidth:itemWidth estimateHeight:200];
-    return itemHeight;
-}
--(CGFloat )itemWidth
-{
-    return ([UIScreen mainScreen].bounds.size.width-3*5)/3.0;
 }
 
 - (void)didReceiveMemoryWarning {

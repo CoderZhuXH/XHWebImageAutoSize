@@ -16,7 +16,7 @@
     BOOL reloadState = [XHWebImageAutoSizeCache readReloadStateWithURL:url];
     if(!reloadState)
     {
-        NSLog(@"执行了reloadRowsAtIndexPaths");
+        NSLog(@"执行了reloadItemsAtIndexPaths");
         [self reloadItemsAtIndexPaths:indexPaths];
         [XHWebImageAutoSizeCache cacheReloadState:YES URL:url completed:nil];
         
