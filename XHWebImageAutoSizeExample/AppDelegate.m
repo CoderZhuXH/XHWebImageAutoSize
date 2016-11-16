@@ -27,7 +27,7 @@
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
     
 #if defined(DEBUG)||defined(_DEBUG)
-    [[JPFPSStatus sharedInstance] open];
+    [[JPFPSStatus sharedInstance] open];//FPS监测
 #endif
     
     [self.window makeKeyAndVisible];
