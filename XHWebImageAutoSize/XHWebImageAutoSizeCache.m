@@ -15,8 +15,33 @@
 #define DebugLog(...)
 #endif
 
+@interface XHWebImageAutoSizeCache()
+
+@property(nonatomic,strong)NSCache * cache;
+
+@end
 @implementation XHWebImageAutoSizeCache
 
++(XHWebImageAutoSizeCache *)shardManger{
+    
+    static XHWebImageAutoSizeCache *instance = nil;
+    static dispatch_once_t oneToken;
+    dispatch_once(&oneToken,^{
+        
+        instance = [[XHWebImageAutoSizeCache alloc] init];
+        
+    });
+    return instance;
+}
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        self.cache = [[NSCache alloc] init];
+    }
+    return self;
+}
 +(CGFloat)imageHeightWithURL:(NSURL *)url layoutWidth:(CGFloat)layoutWidth estimateHeight:(CGFloat )estimateHeight
 {
     CGFloat showHeight = estimateHeight;
@@ -29,19 +54,25 @@
     }
     return showHeight;
 }
+//存储size
 +(BOOL)cacheImageSizeWithImage:(UIImage *)image URL:(NSURL *)url
 {
     CGSize imgSize = image.size;
     NSDictionary *sizeDict = @{@"width":@(imgSize.width),@"height":@(imgSize.height)};
-    return [sizeDict writeToFile:[self sizeKeyPathWithURL:url] atomically:YES];
+    NSData *data = [self dataFromDict:sizeDict];
+   [[self shardManger].cache setObject:data forKey:[self sizeKeyWithURL:url]];
+   return [[NSFileManager defaultManager] createFileAtPath:[self sizeKeyPathWithURL:url] contents:data attributes:nil];
 }
 
+//存储reload
 +(BOOL)cacheReloadState:(BOOL)state URL:(NSURL *)url
 {
     NSString *stateString = @"0";
     if(state) stateString = @"1";
-    NSDictionary *stateDict = @{@"reloadKey":stateString};
-    return [stateDict writeToFile:[self reloadKeyPathWithURL:url] atomically:YES];
+    NSDictionary *stateDict = @{@"reloadSate":stateString};
+    NSData *data = [self dataFromDict:stateDict];
+    [[self shardManger].cache setObject:data forKey:[self reloadKeyWithURL:url]];
+    return [[NSFileManager defaultManager] createFileAtPath:[self reloadKeyPathWithURL:url] contents:data attributes:nil];
 }
 +(void)cacheReloadState:(BOOL)state URL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock
 {
@@ -58,10 +89,20 @@
         });
     });
 }
+
 //读取缓存size
 +(CGSize)readImageSizeCacheWithURL:(NSURL *)url
 {
-    NSDictionary *sizeDict = [NSDictionary dictionaryWithContentsOfFile:[self sizeKeyPathWithURL:url]];
+    NSDictionary *sizeDict;
+    NSData *data = [[XHWebImageAutoSizeCache shardManger].cache objectForKey:[self sizeKeyWithURL:url]];
+    if(data)
+    {
+        sizeDict = [self dictFromData:data];
+    }
+    else
+    {
+        sizeDict = [self dictFromCacheKeyPath:[self sizeKeyPathWithURL:url]];
+    }
     CGFloat width = [sizeDict[@"width"] floatValue];
     CGFloat height = [sizeDict[@"height"] floatValue];
     CGSize size = CGSizeMake(width, height);
@@ -70,10 +111,44 @@
 //读取reload状态
 +(BOOL)readReloadStateWithURL:(NSURL *)url
 {
-    NSDictionary *sizeDict = [NSDictionary dictionaryWithContentsOfFile:[self reloadKeyPathWithURL:url]];
-    NSString * state = sizeDict[@"reloadKey"];
+    NSDictionary *reloadDict;
+    NSData *data = [[XHWebImageAutoSizeCache shardManger].cache objectForKey:[self reloadKeyWithURL:url]];
+    if(data)
+    {
+        reloadDict = [self dictFromData:data];
+    }
+    else
+    {
+        reloadDict = [self dictFromCacheKeyPath:[self reloadKeyPathWithURL:url]];
+    }
+    NSString * state = reloadDict[@"reloadSate"];
     if([state isEqualToString:@"1"]) return YES;
     return NO;
+}
++(NSDictionary *)dictFromCacheKeyPath:(NSString *)cacheKeyPath
+{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:cacheKeyPath isDirectory:nil] == YES) {
+        NSData *data = [fileManager contentsAtPath:cacheKeyPath];
+        return [self dictFromData:data];
+    }
+    return nil;
+}
++(NSData *)dataFromDict:(NSDictionary *)dict
+{
+    if(dict==nil) return nil;
+    NSError *error;
+    NSData *data =[NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
+    if (error) {
+        DebugLog(@"ERROR, faild to get json data");
+        return nil;
+    }
+    return data;
+}
++(NSDictionary *)dictFromData:(NSData *)data
+{
+    if(data==nil) return nil;
+    return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 }
 + (NSString *)md5StringFromString:(NSString *)string {
     
