@@ -12,17 +12,6 @@
 #import "UIImageView+WebCache.h"
 #import "WaterfallColectionLayout.h"
 
-#define MainScreen [[UIScreen mainScreen] bounds]
-#define MWIDTH MainScreen.size.width
-#define MHEIGHT MainScreen.size.height
-
-//RGB 颜色
-#define RGBCOLOR(r,g,b) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
-#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
-
-//随机色
-#define Color_Other  RGBCOLOR(arc4random()%255, arc4random()%255, arc4random()%255)
-
 static NSString *const cellId = @"CollectionViewCell";
 
 @interface CollectionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -93,7 +82,6 @@ static NSString *const cellId = @"CollectionViewCell";
     return cell;
 }
 
-#pragma mark ---- UICollectionViewDelegateFlowLayout
 -(CGFloat )itemHeightAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *url = self.dataArray[indexPath.row];
@@ -103,7 +91,7 @@ static NSString *const cellId = @"CollectionViewCell";
 }
 -(CGFloat )itemWidth
 {
-    return (MWIDTH-3*5)/3.0;
+    return ([UIScreen mainScreen].bounds.size.width-3*5)/3.0;
 }
 
 - (void)didReceiveMemoryWarning {

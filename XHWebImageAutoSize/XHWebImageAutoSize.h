@@ -16,13 +16,13 @@ typedef void(^XHWebImageAutoSizeCompletionBlock)(BOOL result);
 @interface XHWebImageAutoSize : NSObject
 
 /**
- *  图片高度
+ *  图片显示高度
  *
  *  @param url            图片url
- *  @param layoutWidth    适配图片宽度
+ *  @param layoutWidth    适配的宽度
  *  @param estimateHeight 预估高度
  *
- *  @return 图片高度
+ *  @return 图片显示高度
  */
 +(CGFloat)imageHeightWithURL:(NSURL *)url layoutWidth:(CGFloat)layoutWidth estimateHeight:(CGFloat )estimateHeight;
 

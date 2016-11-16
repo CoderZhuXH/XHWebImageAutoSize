@@ -11,12 +11,6 @@
 #import "UIImageView+WebCache.h"
 #import "XHWebImageAutoSize.h"
 
-
-#define MainScreen [[UIScreen mainScreen] bounds]
-#define MWIDTH MainScreen.size.width
-#define MHEIGHT MainScreen.size.height
-
-
 static NSString *const cellId = @"ImageViewCell";
 
 @interface TableViewController ()
@@ -54,7 +48,7 @@ static NSString *const cellId = @"ImageViewCell";
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *url = self.dataArray[indexPath.row];
-    return [XHWebImageAutoSize imageHeightWithURL:[NSURL URLWithString:url] layoutWidth:MWIDTH-16 estimateHeight:200];
+    return [XHWebImageAutoSize imageHeightWithURL:[NSURL URLWithString:url] layoutWidth:[UIScreen mainScreen].bounds.size.width-16 estimateHeight:200];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
