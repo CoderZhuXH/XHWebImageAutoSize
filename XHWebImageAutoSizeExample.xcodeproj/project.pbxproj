@@ -38,6 +38,14 @@
 		0C0176341DDBFE7A000299B6 /* XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C01761B1DDBFE7A000299B6 /* XHWebImageAutoSize.m */; };
 		0C0176351DDBFE7A000299B6 /* XHWebImageAutoSizeCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C01761D1DDBFE7A000299B6 /* XHWebImageAutoSizeCache.m */; };
 		0C0176381DDC005E000299B6 /* UICollectionView+XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0176371DDC005E000299B6 /* UICollectionView+XHWebImageAutoSize.m */; };
+		0C01763C1DDC077B000299B6 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C01763A1DDC077B000299B6 /* CollectionViewController.m */; };
+		0C01763D1DDC077B000299B6 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C01763B1DDC077B000299B6 /* CollectionViewController.xib */; };
+		0C0176461DDC088D000299B6 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0176441DDC088D000299B6 /* CollectionViewCell.m */; };
+		0C0176471DDC088D000299B6 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C0176451DDC088D000299B6 /* CollectionViewCell.xib */; };
+		0C01764B1DDC0BAA000299B6 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0176491DDC0BAA000299B6 /* TableViewController.m */; };
+		0C01764C1DDC0BAA000299B6 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C01764A1DDC0BAA000299B6 /* TableViewController.xib */; };
+		0C01764F1DDC326F000299B6 /* WaterfallColectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C01764E1DDC326F000299B6 /* WaterfallColectionLayout.m */; };
+		0C0176531DDC3B9E000299B6 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C0176521DDC3B9E000299B6 /* images.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +128,18 @@
 		0C01761D1DDBFE7A000299B6 /* XHWebImageAutoSizeCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSizeCache.m; sourceTree = "<group>"; };
 		0C0176361DDC005E000299B6 /* UICollectionView+XHWebImageAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+XHWebImageAutoSize.h"; sourceTree = "<group>"; };
 		0C0176371DDC005E000299B6 /* UICollectionView+XHWebImageAutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+XHWebImageAutoSize.m"; sourceTree = "<group>"; };
+		0C0176391DDC077B000299B6 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		0C01763A1DDC077B000299B6 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		0C01763B1DDC077B000299B6 /* CollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
+		0C0176431DDC088D000299B6 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		0C0176441DDC088D000299B6 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		0C0176451DDC088D000299B6 /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
+		0C0176481DDC0BAA000299B6 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		0C0176491DDC0BAA000299B6 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		0C01764A1DDC0BAA000299B6 /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
+		0C01764D1DDC326F000299B6 /* WaterfallColectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterfallColectionLayout.h; sourceTree = "<group>"; };
+		0C01764E1DDC326F000299B6 /* WaterfallColectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterfallColectionLayout.m; sourceTree = "<group>"; };
+		0C0176521DDC3B9E000299B6 /* images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,10 +233,19 @@
 		0C0175EA1DDBFE7A000299B6 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0C0176521DDC3B9E000299B6 /* images.json */,
 				0C0175EB1DDBFE7A000299B6 /* View */,
 				0C0175EF1DDBFE7A000299B6 /* ViewController.h */,
 				0C0175F01DDBFE7A000299B6 /* ViewController.m */,
 				0C0175F11DDBFE7A000299B6 /* ViewController.xib */,
+				0C0176391DDC077B000299B6 /* CollectionViewController.h */,
+				0C01763A1DDC077B000299B6 /* CollectionViewController.m */,
+				0C01763B1DDC077B000299B6 /* CollectionViewController.xib */,
+				0C0176481DDC0BAA000299B6 /* TableViewController.h */,
+				0C0176491DDC0BAA000299B6 /* TableViewController.m */,
+				0C01764A1DDC0BAA000299B6 /* TableViewController.xib */,
+				0C01764D1DDC326F000299B6 /* WaterfallColectionLayout.h */,
+				0C01764E1DDC326F000299B6 /* WaterfallColectionLayout.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -224,6 +253,9 @@
 		0C0175EB1DDBFE7A000299B6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0C0176431DDC088D000299B6 /* CollectionViewCell.h */,
+				0C0176441DDC088D000299B6 /* CollectionViewCell.m */,
+				0C0176451DDC088D000299B6 /* CollectionViewCell.xib */,
 				0C0175EC1DDBFE7A000299B6 /* ImageViewCell.h */,
 				0C0175ED1DDBFE7A000299B6 /* ImageViewCell.m */,
 				0C0175EE1DDBFE7A000299B6 /* ImageViewCell.xib */,
@@ -399,9 +431,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C0175C71DDBFDD5000299B6 /* LaunchScreen.storyboard in Resources */,
+				0C0176531DDC3B9E000299B6 /* images.json in Resources */,
+				0C01763D1DDC077B000299B6 /* CollectionViewController.xib in Resources */,
+				0C0176471DDC088D000299B6 /* CollectionViewCell.xib in Resources */,
 				0C01761F1DDBFE7A000299B6 /* ImageViewCell.xib in Resources */,
 				0C0176211DDBFE7A000299B6 /* ViewController.xib in Resources */,
 				0C0175C41DDBFDD5000299B6 /* Assets.xcassets in Resources */,
+				0C01764C1DDC0BAA000299B6 /* TableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -436,14 +472,18 @@
 				0C0175BC1DDBFDD5000299B6 /* AppDelegate.m in Sources */,
 				0C0176271DDBFE7A000299B6 /* SDWebImageDecoder.m in Sources */,
 				0C0176281DDBFE7A000299B6 /* SDWebImageDownloader.m in Sources */,
+				0C01763C1DDC077B000299B6 /* CollectionViewController.m in Sources */,
 				0C0176201DDBFE7A000299B6 /* ViewController.m in Sources */,
+				0C0176461DDC088D000299B6 /* CollectionViewCell.m in Sources */,
 				0C01762A1DDBFE7A000299B6 /* SDWebImageManager.m in Sources */,
 				0C0176321DDBFE7A000299B6 /* UIView+WebCacheOperation.m in Sources */,
 				0C01762C1DDBFE7A000299B6 /* UIButton+WebCache.m in Sources */,
 				0C01762E1DDBFE7A000299B6 /* UIImage+MultiFormat.m in Sources */,
 				0C0176341DDBFE7A000299B6 /* XHWebImageAutoSize.m in Sources */,
 				0C0176221DDBFE7A000299B6 /* JPFPSStatus.m in Sources */,
+				0C01764B1DDC0BAA000299B6 /* TableViewController.m in Sources */,
 				0C0176291DDBFE7A000299B6 /* SDWebImageDownloaderOperation.m in Sources */,
+				0C01764F1DDC326F000299B6 /* WaterfallColectionLayout.m in Sources */,
 				0C01762D1DDBFE7A000299B6 /* UIImage+GIF.m in Sources */,
 				0C0176261DDBFE7A000299B6 /* SDWebImageCompat.m in Sources */,
 				0C0176241DDBFE7A000299B6 /* NSData+ImageContentType.m in Sources */,

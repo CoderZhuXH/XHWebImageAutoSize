@@ -4,7 +4,7 @@
 //
 //  Created by zhuxiaohui on 2016/11/16.
 //  Copyright © 2016年 ruiec.cn. All rights reserved.
-//
+//  https://github.com/CoderZhuXH/XHWebImageAutoSize
 
 #import "XHWebImageAutoSizeCache.h"
 #import <CommonCrypto/CommonDigest.h>
