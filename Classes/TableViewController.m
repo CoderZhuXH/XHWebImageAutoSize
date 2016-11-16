@@ -30,6 +30,8 @@ static NSString *const cellId = @"ImageViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"UITableView+XHWebImageAutoSize";
+    
     [self.myTableView registerNib:[UINib nibWithNibName:cellId bundle:nil] forCellReuseIdentifier:cellId];
     
     // Do any additional setup after loading the view from its nib.

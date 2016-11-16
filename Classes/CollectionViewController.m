@@ -38,6 +38,8 @@ static NSString *const cellId = @"CollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"UICollectionView+XHWebImageAutoSize";
+    
     [self.myCollectionView registerNib:[UINib nibWithNibName:cellId bundle:nil] forCellWithReuseIdentifier:cellId];
     self.myCollectionView.collectionViewLayout = self.layout;
 

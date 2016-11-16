@@ -17,7 +17,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zPD-bw-rEd">
-                    <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="mOI-V6-9S1"/>
@@ -30,7 +30,7 @@
                 <constraint firstAttribute="bottom" secondItem="zPD-bw-rEd" secondAttribute="bottom" id="KY7-aO-9QC"/>
                 <constraint firstItem="zPD-bw-rEd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VhZ-To-aJg"/>
                 <constraint firstAttribute="trailing" secondItem="zPD-bw-rEd" secondAttribute="trailing" id="iA9-2x-s84"/>
-                <constraint firstItem="zPD-bw-rEd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="tkB-6b-xTI"/>
+                <constraint firstItem="zPD-bw-rEd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tkB-6b-xTI"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <point key="canvasLocation" x="275" y="143"/>

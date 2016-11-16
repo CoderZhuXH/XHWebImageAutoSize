@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     self.navigationItem.title = @"XHWebImageAutoSizeExample";
     self.myTableView.tableFooterView = [[UIView alloc] init];
     
@@ -40,6 +40,7 @@
 {
     return self.dataArray.count;
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 44.0;
