@@ -67,7 +67,7 @@
     CGSize size = CGSizeMake(width, height);
     return size;
 }
-//读取缓存状态
+//读取reload状态
 +(BOOL)readReloadStateWithURL:(NSURL *)url
 {
     NSDictionary *sizeDict = [NSDictionary dictionaryWithContentsOfFile:[self reloadKeyPathWithURL:url]];

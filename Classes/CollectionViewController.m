@@ -66,8 +66,7 @@ static NSString *const cellId = @"CollectionViewCell";
     }
     return _dataArray;
 }
-#pragma mark ---- UICollectionViewDataSource
-
+#pragma mark ---- UICollectionView
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.dataArray.count;
