@@ -9,11 +9,14 @@
 #import "XHWebImageAutoSize.h"
 #import "XHWebImageAutoSizeCache.h"
 
+static CGFloat const estimateDefaultHeight = 100;
+
 @implementation XHWebImageAutoSize
 
 +(CGFloat)imageHeightWithURL:(NSURL *)url layoutWidth:(CGFloat)layoutWidth estimateHeight:(CGFloat )estimateHeight
 {
-    CGFloat showHeight = estimateHeight;
+    CGFloat showHeight = estimateDefaultHeight;
+    if(estimateHeight) showHeight = estimateHeight;
     CGSize size = [XHWebImageAutoSizeCache readImageSizeCacheWithURL:url];
     CGFloat imgWidth = size.width;
     CGFloat imgHeight = size.height;

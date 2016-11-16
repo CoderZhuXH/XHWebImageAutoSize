@@ -10,6 +10,12 @@
 
 @interface UICollectionView (XHWebImageAutoSize)
 
+/**
+ *  xh_reloadItemsAtIndexPaths
+ *
+ *  @param indexPaths indexPaths
+ *  @param url        imageURL
+ */
 -(void)xh_reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths URL:(NSURL *)url;
 
 @end

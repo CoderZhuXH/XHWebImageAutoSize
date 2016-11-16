@@ -24,7 +24,7 @@ typedef void(^XHWebImageAutoSizeCompletionBlock)(BOOL result);
  *
  *  @return 图片显示高度
  */
-+(CGFloat)imageHeightWithURL:(NSURL *)url layoutWidth:(CGFloat)layoutWidth estimateHeight:(CGFloat )estimateHeight;
++(CGFloat)imageHeightWithURL:(NSURL *)url layoutWidth:(CGFloat)layoutWidth estimateHeight:(CGFloat)estimateHeight;
 
 /**
  *  缓存图片size

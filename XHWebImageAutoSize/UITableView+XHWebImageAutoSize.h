@@ -11,6 +11,12 @@
 
 @interface UITableView (XHWebImageAutoSize)
 
+/**
+ *  reloadRowsAtIndexPaths
+ *
+ *  @param indexPaths indexPaths
+ *  @param url        imageURL
+ */
 -(void)xh_reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths URL:(NSURL *)url;
 
 @end

@@ -49,6 +49,13 @@ static NSString *const cellId = @"CollectionViewCell";
 {
     NSString *url = self.dataArray[indexPath.row];
     CGFloat itemWidth = [self itemWidth];
+    
+    /**
+     *  参数1:图片URL
+     *  参数2:imageView 宽度
+     *  参数3:预估高度,此高度越接近真实高度效果越好
+     */
+    
     CGFloat itemHeight = [XHWebImageAutoSize imageHeightWithURL:[NSURL URLWithString:url] layoutWidth:itemWidth estimateHeight:200];
     return itemHeight;
 }
