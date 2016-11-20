@@ -203,12 +203,12 @@
     if(data==nil) return nil;
     return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 }
-//size keyPath
+
 -(NSString *)sizeCachePathForKey:(NSString *)key
 {
     return [self cachePathForKey:key inPath:[self sizeCacheDirectory]];
 }
-//reload KeyPath
+
 -(NSString *)reloadCachePathForKey:(NSString *)key
 {
     return [self cachePathForKey:key inPath:[self reloadCacheDirectory]];
@@ -218,12 +218,12 @@
     [self checkDirectory:path];
     return [path stringByAppendingPathComponent:key];
 }
-//size缓存文件夹
+
 -(NSString *)sizeCacheDirectory
 {
     return [[self baseCacheDirectory] stringByAppendingPathComponent:@"SizeCache"];
 }
-//reload缓存文件夹
+
 -(NSString *)reloadCacheDirectory
 {
     return [[self baseCacheDirectory] stringByAppendingPathComponent:@"ReloadCache"];

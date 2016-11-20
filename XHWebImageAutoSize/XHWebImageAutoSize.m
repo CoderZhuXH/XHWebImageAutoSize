@@ -57,3 +57,44 @@ static CGFloat const estimateDefaultHeight = 100;
 }
 
 @end
+
+
+@implementation UITableView (XHWebImageAutoSize)
+
+-(void)xh_reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths URL:(NSURL *)url
+{
+    [self xh_reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone URL:url];
+}
+
+-(void)xh_reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation URL:(NSURL *)url
+{
+    BOOL reloadState = [XHWebImageAutoSize reloadStateFromCacheForURL:url];
+    if(!reloadState)
+    {
+        [self reloadRowsAtIndexPaths:indexPaths withRowAnimation:animation];
+        [XHWebImageAutoSize storeReloadState:YES forURL:url completed:nil];
+        
+    }
+}
+
+@end
+
+
+@implementation UICollectionView (XHWebImageAutoSize)
+
+-(void)xh_reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths URL:(NSURL *)url
+{
+    BOOL reloadState = [XHWebImageAutoSize reloadStateFromCacheForURL:url];
+    if(!reloadState)
+    {
+        [self reloadItemsAtIndexPaths:indexPaths];
+        [XHWebImageAutoSize storeReloadState:YES forURL:url completed:nil];
+        
+    }
+}
+
+@end
+
+
+
+

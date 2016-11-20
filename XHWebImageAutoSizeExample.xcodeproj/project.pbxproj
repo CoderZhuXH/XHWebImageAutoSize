@@ -34,10 +34,8 @@
 		0C0176301DDBFE7A000299B6 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0176121DDBFE7A000299B6 /* UIImageView+HighlightedWebCache.m */; };
 		0C0176311DDBFE7A000299B6 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0176141DDBFE7A000299B6 /* UIImageView+WebCache.m */; };
 		0C0176321DDBFE7A000299B6 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0176161DDBFE7A000299B6 /* UIView+WebCacheOperation.m */; };
-		0C0176331DDBFE7A000299B6 /* UITableView+XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0176191DDBFE7A000299B6 /* UITableView+XHWebImageAutoSize.m */; };
 		0C0176341DDBFE7A000299B6 /* XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C01761B1DDBFE7A000299B6 /* XHWebImageAutoSize.m */; };
 		0C0176351DDBFE7A000299B6 /* XHWebImageAutoSizeCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C01761D1DDBFE7A000299B6 /* XHWebImageAutoSizeCache.m */; };
-		0C0176381DDC005E000299B6 /* UICollectionView+XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0176371DDC005E000299B6 /* UICollectionView+XHWebImageAutoSize.m */; };
 		0C01763C1DDC077B000299B6 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C01763A1DDC077B000299B6 /* CollectionViewController.m */; };
 		0C01763D1DDC077B000299B6 /* CollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C01763B1DDC077B000299B6 /* CollectionViewController.xib */; };
 		0C0176461DDC088D000299B6 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0176441DDC088D000299B6 /* CollectionViewCell.m */; };
@@ -120,14 +118,10 @@
 		0C0176141DDBFE7A000299B6 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		0C0176151DDBFE7A000299B6 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		0C0176161DDBFE7A000299B6 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		0C0176181DDBFE7A000299B6 /* UITableView+XHWebImageAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+XHWebImageAutoSize.h"; sourceTree = "<group>"; };
-		0C0176191DDBFE7A000299B6 /* UITableView+XHWebImageAutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+XHWebImageAutoSize.m"; sourceTree = "<group>"; };
 		0C01761A1DDBFE7A000299B6 /* XHWebImageAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHWebImageAutoSize.h; sourceTree = "<group>"; };
 		0C01761B1DDBFE7A000299B6 /* XHWebImageAutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSize.m; sourceTree = "<group>"; };
 		0C01761C1DDBFE7A000299B6 /* XHWebImageAutoSizeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHWebImageAutoSizeCache.h; sourceTree = "<group>"; };
 		0C01761D1DDBFE7A000299B6 /* XHWebImageAutoSizeCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSizeCache.m; sourceTree = "<group>"; };
-		0C0176361DDC005E000299B6 /* UICollectionView+XHWebImageAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+XHWebImageAutoSize.h"; sourceTree = "<group>"; };
-		0C0176371DDC005E000299B6 /* UICollectionView+XHWebImageAutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+XHWebImageAutoSize.m"; sourceTree = "<group>"; };
 		0C0176391DDC077B000299B6 /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
 		0C01763A1DDC077B000299B6 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		0C01763B1DDC077B000299B6 /* CollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewController.xib; sourceTree = "<group>"; };
@@ -315,10 +309,6 @@
 		0C0176171DDBFE7A000299B6 /* XHWebImageAutoSize */ = {
 			isa = PBXGroup;
 			children = (
-				0C0176181DDBFE7A000299B6 /* UITableView+XHWebImageAutoSize.h */,
-				0C0176191DDBFE7A000299B6 /* UITableView+XHWebImageAutoSize.m */,
-				0C0176361DDC005E000299B6 /* UICollectionView+XHWebImageAutoSize.h */,
-				0C0176371DDC005E000299B6 /* UICollectionView+XHWebImageAutoSize.m */,
 				0C01761A1DDBFE7A000299B6 /* XHWebImageAutoSize.h */,
 				0C01761B1DDBFE7A000299B6 /* XHWebImageAutoSize.m */,
 				0C01761C1DDBFE7A000299B6 /* XHWebImageAutoSizeCache.h */,
@@ -464,7 +454,6 @@
 			files = (
 				0C01761E1DDBFE7A000299B6 /* ImageViewCell.m in Sources */,
 				0C0176301DDBFE7A000299B6 /* UIImageView+HighlightedWebCache.m in Sources */,
-				0C0176381DDC005E000299B6 /* UICollectionView+XHWebImageAutoSize.m in Sources */,
 				0C0176311DDBFE7A000299B6 /* UIImageView+WebCache.m in Sources */,
 				0C01762F1DDBFE7A000299B6 /* UIImage+WebP.m in Sources */,
 				0C01762B1DDBFE7A000299B6 /* SDWebImagePrefetcher.m in Sources */,
@@ -487,7 +476,6 @@
 				0C01762D1DDBFE7A000299B6 /* UIImage+GIF.m in Sources */,
 				0C0176261DDBFE7A000299B6 /* SDWebImageCompat.m in Sources */,
 				0C0176241DDBFE7A000299B6 /* NSData+ImageContentType.m in Sources */,
-				0C0176331DDBFE7A000299B6 /* UITableView+XHWebImageAutoSize.m in Sources */,
 				0C0175B91DDBFDD5000299B6 /* main.m in Sources */,
 				0C0176231DDBFE7A000299B6 /* MKAnnotationView+WebCache.m in Sources */,
 				0C0176251DDBFE7A000299B6 /* SDImageCache.m in Sources */,
@@ -706,6 +694,7 @@
 				0C0175E31DDBFDD5000299B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C0175E41DDBFDD5000299B6 /* Build configuration list for PBXNativeTarget "XHWebImageAutoSizeExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -714,6 +703,7 @@
 				0C0175E61DDBFDD5000299B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0C0175E71DDBFDD5000299B6 /* Build configuration list for PBXNativeTarget "XHWebImageAutoSizeExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -722,6 +712,7 @@
 				0C0175E91DDBFDD5000299B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
