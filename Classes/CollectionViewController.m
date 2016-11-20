@@ -56,7 +56,7 @@ static NSString *const cellId = @"CollectionViewCell";
      *  参数3:预估高度,此高度越接近真实高度效果越好
      */
     
-    CGFloat itemHeight = [XHWebImageAutoSize imageHeightWithURL:[NSURL URLWithString:url] layoutWidth:itemWidth estimateHeight:200];
+    CGFloat itemHeight = [XHWebImageAutoSize imageHeightForURL:[NSURL URLWithString:url] layoutWidth:itemWidth estimateHeight:200];
     return itemHeight;
 }
 -(CGFloat )itemWidth
@@ -73,7 +73,7 @@ static NSString *const cellId = @"CollectionViewCell";
     }
     return _dataArray;
 }
-#pragma mark ---- UICollectionView
+#pragma mark - UICollectionView
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     return self.dataArray.count;
@@ -87,7 +87,7 @@ static NSString *const cellId = @"CollectionViewCell";
 
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
-        [XHWebImageAutoSize cacheImageSizeWithImage:image URL:imageURL completed:^(BOOL result) {
+        [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
             
             
             [collectionView xh_reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath] URL:imageURL];

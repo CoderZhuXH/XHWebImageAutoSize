@@ -7,17 +7,18 @@
 // https://github.com/CoderZhuXH/XHWebImageAutoSize
 
 #import "XHWebImageAutoSize.h"
-#import "XHWebImageAutoSizeCache.h"
+
 
 static CGFloat const estimateDefaultHeight = 100;
 
 @implementation XHWebImageAutoSize
 
-+(CGFloat)imageHeightWithURL:(NSURL *)url layoutWidth:(CGFloat)layoutWidth estimateHeight:(CGFloat )estimateHeight
-{
++(CGFloat)imageHeightForURL:(NSURL *)url layoutWidth:(CGFloat)layoutWidth estimateHeight:(CGFloat )estimateHeight{
+    
     CGFloat showHeight = estimateDefaultHeight;
     if(estimateHeight) showHeight = estimateHeight;
-    CGSize size = [XHWebImageAutoSizeCache readImageSizeCacheWithURL:url];
+    if(!url || !layoutWidth) return showHeight;
+    CGSize size = [self imageSizeFromCacheForURL:url];
     CGFloat imgWidth = size.width;
     CGFloat imgHeight = size.height;
     if(imgWidth>0 && imgHeight >0)
@@ -27,19 +28,32 @@ static CGFloat const estimateDefaultHeight = 100;
     return showHeight;
 }
 
-+(void)cacheImageSizeWithImage:(UIImage *)image URL:(NSURL *)url completed:(XHWebImageAutoSizeCompletionBlock)completedBlock
-{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        
-        BOOL result = [XHWebImageAutoSizeCache cacheImageSizeWithImage:image URL:url];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            
-            if(completedBlock)
-            {
-                completedBlock(result);
-            }
-        });
-    });
++(void)storeImageSize:(UIImage *)image forURL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock{
+    
+    [[XHWebImageAutoSizeCache shardCache] storeImageSize:image forKey:[self cacheKeyForURL:url] completed:completedBlock];
+    
 }
++(void)storeReloadState:(BOOL)state forURL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock{
+
+    [[XHWebImageAutoSizeCache shardCache] storeReloadState:state forKey:[self cacheKeyForURL:url] completed:completedBlock];
+     
+}
++(CGSize )imageSizeFromCacheForURL:(NSURL *)url{
+
+    return [[XHWebImageAutoSizeCache shardCache] imageSizeFromCacheForKey:[self cacheKeyForURL:url]];
+    
+}
+
++(BOOL)reloadStateFromCacheForURL:(NSURL *)url{
+
+  return [[XHWebImageAutoSizeCache shardCache] reloadStateFromCacheForKey:[self cacheKeyForURL:url]];
+    
+}
+#pragma mark - XHWebImageAutoSize (private)
+
++(NSString *)cacheKeyForURL:(NSURL *)url{
+    
+    return [url absoluteString];
+}
+
 @end

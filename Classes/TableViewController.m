@@ -53,7 +53,7 @@ static NSString *const cellId = @"ImageViewCell";
      *  参数2:imageView 宽度
      *  参数3:预估高度,此高度越接近真实高度效果越好
      */
-    return [XHWebImageAutoSize imageHeightWithURL:[NSURL URLWithString:url] layoutWidth:[UIScreen mainScreen].bounds.size.width-16 estimateHeight:200];
+    return [XHWebImageAutoSize imageHeightForURL:[NSURL URLWithString:url] layoutWidth:[UIScreen mainScreen].bounds.size.width-16 estimateHeight:200];
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -65,7 +65,7 @@ static NSString *const cellId = @"ImageViewCell";
     NSString *url = self.dataArray[indexPath.row];
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
-        [XHWebImageAutoSize cacheImageSizeWithImage:image URL:imageURL completed:^(BOOL result) {
+        [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
             
             [tableView xh_reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] URL:imageURL];
             

@@ -7,18 +7,18 @@
 //  https://github.com/CoderZhuXH/XHWebImageAutoSize
 
 #import "UICollectionView+XHWebImageAutoSize.h"
-#import "XHWebImageAutoSizeCache.h"
+#import "XHWebImageAutoSize.h"
 
 @implementation UICollectionView (XHWebImageAutoSize)
 
 -(void)xh_reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths URL:(NSURL *)url
 {
-    BOOL reloadState = [XHWebImageAutoSizeCache readReloadStateWithURL:url];
+    BOOL reloadState = [XHWebImageAutoSize reloadStateFromCacheForURL:url];
     if(!reloadState)
     {
-        NSLog(@"执行了reloadItemsAtIndexPaths");
+        //NSLog(@"执行了reloadItemsAtIndexPaths");
         [self reloadItemsAtIndexPaths:indexPaths];
-        [XHWebImageAutoSizeCache cacheReloadState:YES URL:url completed:nil];
+        [XHWebImageAutoSize storeReloadState:YES forURL:url completed:nil];
         
     }
 }

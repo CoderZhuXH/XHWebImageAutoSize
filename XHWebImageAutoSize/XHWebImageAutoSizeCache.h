@@ -13,11 +13,13 @@ typedef void(^XHWebImageAutoSizeCacheCompletionBlock)(BOOL result);
 
 @interface XHWebImageAutoSizeCache : NSObject
 
-+(BOOL)cacheImageSizeWithImage:(UIImage *)image URL:(NSURL *)url;
-+(CGSize)readImageSizeCacheWithURL:(NSURL *)url;
++(XHWebImageAutoSizeCache *)shardCache;
+-(BOOL)storeImageSize:(UIImage *)image forKey:(NSString *)key;
+-(void)storeImageSize:(UIImage *)image forKey:(NSString *)key completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock;
+-(CGSize)imageSizeFromCacheForKey:(NSString *)key;
 
-+(BOOL)readReloadStateWithURL:(NSURL *)url;
-+(BOOL)cacheReloadState:(BOOL)state URL:(NSURL *)url;
-+(void)cacheReloadState:(BOOL)state URL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock;
+-(BOOL)storeReloadState:(BOOL)state forKey:(NSString *)key;
+-(void)storeReloadState:(BOOL)state forKey:(NSString *)key completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock;
+-(BOOL)reloadStateFromCacheForKey:(NSString *)key;
 
 @end

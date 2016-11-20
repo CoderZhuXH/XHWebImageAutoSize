@@ -10,29 +10,16 @@
 #import <UIKit/UIKit.h>
 #import "UITableView+XHWebImageAutoSize.h"
 #import "UICollectionView+XHWebImageAutoSize.h"
-
-typedef void(^XHWebImageAutoSizeCompletionBlock)(BOOL result);
+#import "XHWebImageAutoSizeCache.h"
 
 @interface XHWebImageAutoSize : NSObject
 
-/**
- *  图片显示高度
- *
- *  @param url            图片url
- *  @param layoutWidth    适配的宽度
- *  @param estimateHeight 预估高度
- *
- *  @return 图片显示高度
- */
-+(CGFloat)imageHeightWithURL:(NSURL *)url layoutWidth:(CGFloat)layoutWidth estimateHeight:(CGFloat)estimateHeight;
++(CGFloat)imageHeightForURL:(NSURL *)url layoutWidth:(CGFloat)layoutWidth estimateHeight:(CGFloat )estimateHeight;
 
-/**
- *  缓存图片size
- *
- *  @param image          图片
- *  @param url            图片url
- *  @param completedBlock 缓存完成回调
- */
-+(void)cacheImageSizeWithImage:(UIImage *)image URL:(NSURL *)url completed:(XHWebImageAutoSizeCompletionBlock)completedBlock;
++(CGSize )imageSizeFromCacheForURL:(NSURL *)url;
++(void)storeImageSize:(UIImage *)image forURL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock;
+
++(BOOL)reloadStateFromCacheForURL:(NSURL *)url;
++(void)storeReloadState:(BOOL)state forURL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock;
 
 @end

@@ -7,7 +7,7 @@
 //  https://github.com/CoderZhuXH/XHWebImageAutoSize
 
 #import "UITableView+XHWebImageAutoSize.h"
-#import "XHWebImageAutoSizeCache.h"
+#import "XHWebImageAutoSize.h"
 
 @implementation UITableView (XHWebImageAutoSize)
 
@@ -18,12 +18,12 @@
 
 -(void)xh_reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation URL:(NSURL *)url
 {
-    BOOL reloadState = [XHWebImageAutoSizeCache readReloadStateWithURL:url];
+    BOOL reloadState = [XHWebImageAutoSize reloadStateFromCacheForURL:url];
     if(!reloadState)
     {
-        NSLog(@"执行了reloadRowsAtIndexPaths");
+        //NSLog(@"执行了reloadRowsAtIndexPaths");
         [self reloadRowsAtIndexPaths:indexPaths withRowAnimation:animation];
-        [XHWebImageAutoSizeCache cacheReloadState:YES URL:url completed:nil];
+        [XHWebImageAutoSize storeReloadState:YES forURL:url completed:nil];
 
     }
 }

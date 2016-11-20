@@ -15,14 +15,53 @@
 #define DebugLog(...)
 #endif
 
+@interface NSString (CacheFileName)
+
+@property(nonatomic,copy ,readonly)NSString * sizeKeyName;
+@property(nonatomic,copy ,readonly)NSString * reloadKeyName;
+@property(nonatomic,copy ,readonly)NSString * md5String;
+
+@end
+
+@implementation NSString (CacheKeyName)
+
+-(NSString *)sizeKeyName{
+
+    NSString *keyName = [NSString stringWithFormat:@"sizeKeyName:%@",self];
+    return keyName.md5String;
+    
+}
+-(NSString *)reloadKeyName{
+    
+    NSString *keyName = [NSString stringWithFormat:@"reloadKeyName:%@",self];
+    return keyName.md5String;
+}
+-(NSString *)md5String
+{
+    const char *value = [self UTF8String];
+    
+    unsigned char outputBuffer[CC_MD5_DIGEST_LENGTH];
+    CC_MD5(value, (CC_LONG)strlen(value), outputBuffer);
+    
+    NSMutableString *outputString = [[NSMutableString alloc] initWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for(NSInteger count = 0; count < CC_MD5_DIGEST_LENGTH; count++){
+        [outputString appendFormat:@"%02x",outputBuffer[count]];
+    }
+    
+    return outputString;
+}
+@end
+
+
 @interface XHWebImageAutoSizeCache()
 
-@property(nonatomic,strong)NSCache * cache;
+@property(nonatomic,strong)NSCache * memCache;
+@property(nonnull,strong)NSFileManager *fileManager;
 
 @end
 @implementation XHWebImageAutoSizeCache
 
-+(XHWebImageAutoSizeCache *)shardManger{
++(XHWebImageAutoSizeCache *)shardCache{
     
     static XHWebImageAutoSizeCache *instance = nil;
     static dispatch_once_t oneToken;
@@ -38,47 +77,30 @@
     self = [super init];
     if (self) {
         
-        self.cache = [[NSCache alloc] init];
+        self.memCache = [[NSCache alloc] init];
+        self.fileManager = [NSFileManager defaultManager];
     }
     return self;
 }
-+(CGFloat)imageHeightWithURL:(NSURL *)url layoutWidth:(CGFloat)layoutWidth estimateHeight:(CGFloat )estimateHeight
-{
-    CGFloat showHeight = estimateHeight;
-    CGSize size = [self readImageSizeCacheWithURL:url];
-    CGFloat imgWidth = size.width;
-    CGFloat imgHeight = size.height;
-    if(imgWidth>0 && imgHeight >0)
-    {
-        showHeight = layoutWidth/imgWidth*imgHeight;
-    }
-    return showHeight;
-}
-//存储size
-+(BOOL)cacheImageSizeWithImage:(UIImage *)image URL:(NSURL *)url
-{
+
+-(BOOL)storeImageSize:(UIImage *)image forKey:(NSString *)key{
+
+    if(!image || !key) return NO;
+    
     CGSize imgSize = image.size;
     NSDictionary *sizeDict = @{@"width":@(imgSize.width),@"height":@(imgSize.height)};
     NSData *data = [self dataFromDict:sizeDict];
-   [[self shardManger].cache setObject:data forKey:[self sizeKeyWithURL:url]];
-   return [[NSFileManager defaultManager] createFileAtPath:[self sizeKeyPathWithURL:url] contents:data attributes:nil];
+    NSString *keyName = key.sizeKeyName;
+    [self.memCache setObject:data forKey:keyName];
+    return [self.fileManager createFileAtPath:[self sizeCachePathForKey:keyName] contents:data attributes:nil];
+    
 }
 
-//存储reload
-+(BOOL)cacheReloadState:(BOOL)state URL:(NSURL *)url
-{
-    NSString *stateString = @"0";
-    if(state) stateString = @"1";
-    NSDictionary *stateDict = @{@"reloadSate":stateString};
-    NSData *data = [self dataFromDict:stateDict];
-    [[self shardManger].cache setObject:data forKey:[self reloadKeyWithURL:url]];
-    return [[NSFileManager defaultManager] createFileAtPath:[self reloadKeyPathWithURL:url] contents:data attributes:nil];
-}
-+(void)cacheReloadState:(BOOL)state URL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock
-{
+-(void)storeImageSize:(UIImage *)image forKey:(NSString *)key completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock{
+    
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
-        BOOL result=[self cacheReloadState:state URL:url];
+        BOOL result = [self storeImageSize:image forKey:key];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
@@ -88,53 +110,84 @@
             }
         });
     });
+    
 }
+-(BOOL)storeReloadState:(BOOL)state forKey:(NSString *)key{
+    
+    if(!key) return NO;
+    NSString *stateString = @"0";
+    if(state) stateString = @"1";
+    NSDictionary *stateDict = @{@"reloadSate":stateString};
+    NSData *data = [self dataFromDict:stateDict];
+    NSString *keyName = key.reloadKeyName;
+    [self.memCache setObject:data forKey:keyName];
+    return [[NSFileManager defaultManager] createFileAtPath:[self reloadCachePathForKey:keyName] contents:data attributes:nil];
+}
+-(void)storeReloadState:(BOOL)state forKey:(NSString *)key completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        BOOL result = [self storeReloadState:state forKey:key];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            if(completedBlock)
+            {
+                completedBlock(result);
+            }
+        });
+    });
+    
+}
+-(CGSize)imageSizeFromCacheForKey:(NSString *)key{
 
-//读取缓存size
-+(CGSize)readImageSizeCacheWithURL:(NSURL *)url
-{
-    NSDictionary *sizeDict;
-    NSData *data = [[XHWebImageAutoSizeCache shardManger].cache objectForKey:[self sizeKeyWithURL:url]];
-    if(data)
+    NSString *keyName = key.sizeKeyName;
+    NSData *data = [self dataFromMemCacheForKey:keyName];
+    if(!data)
     {
-        sizeDict = [self dictFromData:data];
+        [self dataFromDiskCacheForKey:keyName isSizeCache:YES];
     }
-    else
-    {
-        sizeDict = [self dictFromCacheKeyPath:[self sizeKeyPathWithURL:url]];
-    }
+    NSDictionary *sizeDict = [self dictFromData:data];
     CGFloat width = [sizeDict[@"width"] floatValue];
     CGFloat height = [sizeDict[@"height"] floatValue];
     CGSize size = CGSizeMake(width, height);
     return size;
 }
-//读取reload状态
-+(BOOL)readReloadStateWithURL:(NSURL *)url
-{
-    NSDictionary *reloadDict;
-    NSData *data = [[XHWebImageAutoSizeCache shardManger].cache objectForKey:[self reloadKeyWithURL:url]];
-    if(data)
+
+-(BOOL)reloadStateFromCacheForKey:(NSString *)key{
+
+    NSString *keyName = key.reloadKeyName;
+    NSData *data = [self dataFromMemCacheForKey:keyName];
+    if(!data)
     {
-        reloadDict = [self dictFromData:data];
+        [self dataFromDiskCacheForKey:keyName isSizeCache:NO];
     }
-    else
-    {
-        reloadDict = [self dictFromCacheKeyPath:[self reloadKeyPathWithURL:url]];
-    }
-    NSString * state = reloadDict[@"reloadSate"];
-    if([state isEqualToString:@"1"]) return YES;
+    NSDictionary *reloadDict = [self dictFromData:data];
+    NSInteger state = [reloadDict[@"reloadSate"] integerValue];
+    if(state ==1) return YES;
     return NO;
 }
-+(NSDictionary *)dictFromCacheKeyPath:(NSString *)cacheKeyPath
-{
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    if ([fileManager fileExistsAtPath:cacheKeyPath isDirectory:nil] == YES) {
-        NSData *data = [fileManager contentsAtPath:cacheKeyPath];
-        return [self dictFromData:data];
+
+#pragma mark - XHWebImageAutoSizeCache (private)
+
+-(NSData *)dataFromMemCacheForKey:(NSString *)key{
+
+    return [self.memCache objectForKey:key];
+}
+-(NSData *)dataFromDiskCacheForKey:(NSString *)key isSizeCache:(BOOL)isSizeCache{
+
+    NSString *path = [self sizeCachePathForKey:key];
+    
+    if(!isSizeCache) path =[self reloadCachePathForKey:key];
+
+    if ([self.fileManager fileExistsAtPath:path isDirectory:nil] == YES) {
+        
+         return [self.fileManager contentsAtPath:path];
     }
     return nil;
+   
 }
-+(NSData *)dataFromDict:(NSDictionary *)dict
+-(NSData *)dataFromDict:(NSDictionary *)dict
 {
     if(dict==nil) return nil;
     NSError *error;
@@ -145,29 +198,44 @@
     }
     return data;
 }
-+(NSDictionary *)dictFromData:(NSData *)data
+-(NSDictionary *)dictFromData:(NSData *)data
 {
     if(data==nil) return nil;
     return [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 }
-+ (NSString *)md5StringFromString:(NSString *)string {
-    
-    if(string == nil || [string length] == 0)  return nil;
-    
-    const char *value = [string UTF8String];
-    
-    unsigned char outputBuffer[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(value, (CC_LONG)strlen(value), outputBuffer);
-    
-    NSMutableString *outputString = [[NSMutableString alloc] initWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
-    for(NSInteger count = 0; count < CC_MD5_DIGEST_LENGTH; count++){
-        [outputString appendFormat:@"%02x",outputBuffer[count]];
-    }
-    
-    return outputString;
+//size keyPath
+-(NSString *)sizeCachePathForKey:(NSString *)key
+{
+    return [self cachePathForKey:key inPath:[self sizeCacheDirectory]];
 }
-
-+(void)checkDirectory:(NSString *)path {
+//reload KeyPath
+-(NSString *)reloadCachePathForKey:(NSString *)key
+{
+    return [self cachePathForKey:key inPath:[self reloadCacheDirectory]];
+}
+- (NSString *)cachePathForKey:(NSString *)key inPath:(NSString *)path {
+    
+    [self checkDirectory:path];
+    return [path stringByAppendingPathComponent:key];
+}
+//size缓存文件夹
+-(NSString *)sizeCacheDirectory
+{
+    return [[self baseCacheDirectory] stringByAppendingPathComponent:@"SizeCache"];
+}
+//reload缓存文件夹
+-(NSString *)reloadCacheDirectory
+{
+    return [[self baseCacheDirectory] stringByAppendingPathComponent:@"ReloadCache"];
+}
+-(NSString *)baseCacheDirectory
+{
+    NSString *pathOfLibrary = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    NSString *path = [pathOfLibrary stringByAppendingPathComponent:@"XHWebImageAutoSizeCache"];
+    return path;
+    
+}
+-(void)checkDirectory:(NSString *)path {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL isDir;
     if (![fileManager fileExistsAtPath:path isDirectory:&isDir]) {
@@ -181,7 +249,7 @@
         }
     }
 }
-+ (void)createBaseDirectoryAtPath:(NSString *)path {
+- (void)createBaseDirectoryAtPath:(NSString *)path {
     __autoreleasing NSError *error = nil;
     [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES
                                                attributes:nil error:&error];
@@ -193,7 +261,7 @@
         [self addDoNotBackupAttribute:path];
     }
 }
-+ (void)addDoNotBackupAttribute:(NSString *)path {
+- (void)addDoNotBackupAttribute:(NSString *)path {
     NSURL *url = [NSURL fileURLWithPath:path];
     NSError *error = nil;
     [url setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:&error];
@@ -201,58 +269,6 @@
         DebugLog(@"error to set do not backup attribute, error = %@", error);
     }
 }
-//size keyPath
-+ (NSString *)sizeKeyPathWithURL:(NSURL *)url{
-    
-    NSString *path = [self sizeCacheDirectory];
-    [self checkDirectory:path];
-    NSString *sizeKey = [self sizeKeyWithURL:url];
-    path = [path stringByAppendingPathComponent:sizeKey];
-    return path;
-}
-//reload KeyPath
-+ (NSString *)reloadKeyPathWithURL:(NSURL *)url{
-    
-    NSString *path = [self reloadCacheDirectory];
-    [self checkDirectory:path];
-    NSString *reloadKey = [self reloadKeyWithURL:url];
-    path = [path stringByAppendingPathComponent:reloadKey];
-    return path;
-}
-
-//url key
-+(NSString *)sizeKeyWithURL:(NSURL *)url
-{
-    NSString *urlString = url.absoluteString;
-    NSString *urlName = [NSString stringWithFormat:@"sizeUrlName=%@",urlString];
-    NSString *urlKey = [self md5StringFromString:urlName];
-    return urlKey;
-}
-//reload key
-+(NSString *)reloadKeyWithURL:(NSURL *)url
-{
-    NSString *urlString = url.absoluteString;
-    NSString *urlName = [NSString stringWithFormat:@"reloadUrlName=%@",urlString];
-    NSString *reloadKey = [self md5StringFromString:urlName];
-    return reloadKey;
-}
-
-//size缓存文件夹
-+(NSString *)sizeCacheDirectory
-{
-    return [[self baseCacheDirectory] stringByAppendingPathComponent:@"sizeCache"];
-}
-//reload缓存文件夹
-+(NSString *)reloadCacheDirectory
-{
-    return [[self baseCacheDirectory] stringByAppendingPathComponent:@"reloadCache"];
-}
-+(NSString *)baseCacheDirectory
-{
-    NSString *pathOfLibrary = [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *path = [pathOfLibrary stringByAppendingPathComponent:@"XHWebImageAutoSizeCache"];
-    return path;
-
-}
 
 @end
+
