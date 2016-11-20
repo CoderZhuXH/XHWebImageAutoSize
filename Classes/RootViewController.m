@@ -30,7 +30,7 @@
 -(NSArray *)dataArray{
     if(_dataArray==nil)
     {
-         _dataArray = @[@"UITableView+XHWebImageAutoSize",@"UICollectionView+XHWebImageAutoSize"
+         _dataArray = @[@"UITableView - Example01",@"UICollectionView - Example02"
                           ];
     }
     return _dataArray;
@@ -59,6 +59,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIViewController *VC;
+    NSString *title = self.dataArray[indexPath.row];
     if(indexPath.row==0)
     {
         VC = [[TableViewController alloc] init];
@@ -67,7 +68,7 @@
     {
         VC = [[CollectionViewController alloc] init];
     }
-    
+    VC.navigationItem.title = title;
     [self.navigationController pushViewController:VC animated:YES];
 }
 - (void)didReceiveMemoryWarning {

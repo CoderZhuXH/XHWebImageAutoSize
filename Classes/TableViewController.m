@@ -24,11 +24,8 @@ static NSString *const cellId = @"ImageViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"UITableView+XHWebImageAutoSize";
-    
     [self.myTableView registerNib:[UINib nibWithNibName:cellId bundle:nil] forCellReuseIdentifier:cellId];
     
-    // Do any additional setup after loading the view from its nib.
 }
 -(NSArray *)dataArray{
     if(_dataArray==nil)
@@ -70,18 +67,12 @@ static NSString *const cellId = @"ImageViewCell";
          */
         [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
             
-            if(result) [tableView xh_reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] URL:imageURL];
+            [tableView xh_reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] URL:imageURL];
 
         }];
         
     }];
     return cell;
-}
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {

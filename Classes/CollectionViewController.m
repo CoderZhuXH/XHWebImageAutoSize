@@ -27,17 +27,17 @@ static NSString *const cellId = @"CollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"UICollectionView+XHWebImageAutoSize";
-    
     [self.myCollectionView registerNib:[UINib nibWithNibName:cellId bundle:nil] forCellWithReuseIdentifier:cellId];
     self.myCollectionView.collectionViewLayout = self.layout;
 
 }
 -(UICollectionViewLayout *)layout{
     if(!_layout){
+        
+        __weak __typeof(self) weakSelf = self;
         _layout = [[WaterfallColectionLayout alloc]initWithItemsHeightBlock:^CGFloat(NSIndexPath *index) {
 
-            return [self itemHeightAtIndexPath:index];
+            return [weakSelf itemHeightAtIndexPath:index];
             
         }];
         
@@ -57,6 +57,7 @@ static NSString *const cellId = @"CollectionViewCell";
      */
     
     CGFloat itemHeight = [XHWebImageAutoSize imageHeightForURL:[NSURL URLWithString:url] layoutWidth:itemWidth estimateHeight:200];
+    
     return itemHeight;
 }
 -(CGFloat )itemWidth
@@ -95,7 +96,7 @@ static NSString *const cellId = @"CollectionViewCell";
             /**
              *  reload item
              */
-          if(result)  [collectionView xh_reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath] URL:imageURL];
+           [collectionView xh_reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath] URL:imageURL];
             
         }];
         

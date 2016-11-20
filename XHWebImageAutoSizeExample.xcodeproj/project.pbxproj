@@ -25,8 +25,8 @@
 		0C0176471DDC088D000299B6 /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C0176451DDC088D000299B6 /* CollectionViewCell.xib */; };
 		0C01764B1DDC0BAA000299B6 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0176491DDC0BAA000299B6 /* TableViewController.m */; };
 		0C01764C1DDC0BAA000299B6 /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0C01764A1DDC0BAA000299B6 /* TableViewController.xib */; };
-		0C01764F1DDC326F000299B6 /* WaterfallColectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C01764E1DDC326F000299B6 /* WaterfallColectionLayout.m */; };
 		0C0176531DDC3B9E000299B6 /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = 0C0176521DDC3B9E000299B6 /* images.json */; };
+		0CD989DA1DE18B76008ADDCA /* WaterfallColectionLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD989D91DE18B76008ADDCA /* WaterfallColectionLayout.m */; };
 		60816691255288601031FEC4 /* libPods-XHWebImageAutoSizeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 372BA811A75A4FA3C2295DF8 /* libPods-XHWebImageAutoSizeExample.a */; };
 /* End PBXBuildFile section */
 
@@ -80,9 +80,9 @@
 		0C0176481DDC0BAA000299B6 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
 		0C0176491DDC0BAA000299B6 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		0C01764A1DDC0BAA000299B6 /* TableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
-		0C01764D1DDC326F000299B6 /* WaterfallColectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterfallColectionLayout.h; sourceTree = "<group>"; };
-		0C01764E1DDC326F000299B6 /* WaterfallColectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterfallColectionLayout.m; sourceTree = "<group>"; };
 		0C0176521DDC3B9E000299B6 /* images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
+		0CD989D81DE18B76008ADDCA /* WaterfallColectionLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WaterfallColectionLayout.h; sourceTree = "<group>"; };
+		0CD989D91DE18B76008ADDCA /* WaterfallColectionLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WaterfallColectionLayout.m; sourceTree = "<group>"; };
 		372BA811A75A4FA3C2295DF8 /* libPods-XHWebImageAutoSizeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XHWebImageAutoSizeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FDE4A4D02C792F17BB9010B /* Pods-XHWebImageAutoSizeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHWebImageAutoSizeExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XHWebImageAutoSizeExample/Pods-XHWebImageAutoSizeExample.debug.xcconfig"; sourceTree = "<group>"; };
 		AC4AA64D985D049FFE0E2EA0 /* Pods-XHWebImageAutoSizeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHWebImageAutoSizeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-XHWebImageAutoSizeExample/Pods-XHWebImageAutoSizeExample.release.xcconfig"; sourceTree = "<group>"; };
@@ -200,8 +200,6 @@
 				0C0176391DDC077B000299B6 /* CollectionViewController.h */,
 				0C01763A1DDC077B000299B6 /* CollectionViewController.m */,
 				0C01763B1DDC077B000299B6 /* CollectionViewController.xib */,
-				0C01764D1DDC326F000299B6 /* WaterfallColectionLayout.h */,
-				0C01764E1DDC326F000299B6 /* WaterfallColectionLayout.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -209,6 +207,8 @@
 		0C0175EB1DDBFE7A000299B6 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0CD989D81DE18B76008ADDCA /* WaterfallColectionLayout.h */,
+				0CD989D91DE18B76008ADDCA /* WaterfallColectionLayout.m */,
 				0C0176431DDC088D000299B6 /* CollectionViewCell.h */,
 				0C0176441DDC088D000299B6 /* CollectionViewCell.m */,
 				0C0176451DDC088D000299B6 /* CollectionViewCell.xib */,
@@ -426,13 +426,13 @@
 			files = (
 				0C01761E1DDBFE7A000299B6 /* ImageViewCell.m in Sources */,
 				0C0176351DDBFE7A000299B6 /* XHWebImageAutoSizeCache.m in Sources */,
+				0CD989DA1DE18B76008ADDCA /* WaterfallColectionLayout.m in Sources */,
 				0C0175BC1DDBFDD5000299B6 /* AppDelegate.m in Sources */,
 				0C01763C1DDC077B000299B6 /* CollectionViewController.m in Sources */,
 				0C0176201DDBFE7A000299B6 /* RootViewController.m in Sources */,
 				0C0176461DDC088D000299B6 /* CollectionViewCell.m in Sources */,
 				0C0176341DDBFE7A000299B6 /* XHWebImageAutoSize.m in Sources */,
 				0C01764B1DDC0BAA000299B6 /* TableViewController.m in Sources */,
-				0C01764F1DDC326F000299B6 /* WaterfallColectionLayout.m in Sources */,
 				0C0175B91DDBFDD5000299B6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

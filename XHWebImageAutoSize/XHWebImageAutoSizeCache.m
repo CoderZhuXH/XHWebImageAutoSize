@@ -145,7 +145,7 @@
     NSData *data = [self dataFromMemCacheForKey:keyName];
     if(!data)
     {
-        [self dataFromDiskCacheForKey:keyName isSizeCache:YES];
+       data = [self dataFromDiskCacheForKey:keyName isSizeCache:YES];
     }
     NSDictionary *sizeDict = [self dictFromData:data];
     CGFloat width = [sizeDict[@"width"] floatValue];
@@ -160,7 +160,7 @@
     NSData *data = [self dataFromMemCacheForKey:keyName];
     if(!data)
     {
-        [self dataFromDiskCacheForKey:keyName isSizeCache:NO];
+       data = [self dataFromDiskCacheForKey:keyName isSizeCache:NO];
     }
     NSDictionary *reloadDict = [self dictFromData:data];
     NSInteger state = [reloadDict[@"reloadSate"] integerValue];
