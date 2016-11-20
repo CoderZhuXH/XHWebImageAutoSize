@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="93" id="KGk-i7-Jjw" customClass="DemoVC1Cell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="93"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MJK-Im-rXZ">
+                        <rect key="frame" x="8" y="8" width="304" height="76"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MJK-Im-rXZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="6y0-AI-9ji"/>
+                    <constraint firstItem="MJK-Im-rXZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="9GO-D4-Wal"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="MJK-Im-rXZ" secondAttribute="trailing" id="McF-2i-cDg"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="MJK-Im-rXZ" secondAttribute="bottom" id="ecj-gf-els"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="imgView" destination="MJK-Im-rXZ" id="c4c-iU-TdJ"/>
+            </connections>
+            <point key="canvasLocation" x="345" y="344.5"/>
+        </tableViewCell>
+    </objects>
+</document>

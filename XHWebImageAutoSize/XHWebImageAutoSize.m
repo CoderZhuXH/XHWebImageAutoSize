@@ -61,7 +61,7 @@ static CGFloat const estimateDefaultHeight = 100;
 
 @implementation UITableView (XHWebImageAutoSize)
 
--(void)xh_reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths URL:(NSURL *)url
+-(void)xh_reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths forURL:(NSURL *)url
 {
     [self xh_reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone URL:url];
 }
@@ -82,7 +82,7 @@ static CGFloat const estimateDefaultHeight = 100;
 
 @implementation UICollectionView (XHWebImageAutoSize)
 
--(void)xh_reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths URL:(NSURL *)url
+-(void)xh_reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths forURL:(NSURL *)url
 {
     BOOL reloadState = [XHWebImageAutoSize reloadStateFromCacheForURL:url];
     if(!reloadState)

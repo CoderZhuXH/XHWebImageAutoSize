@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9532" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DemoVC3Cell">
+            <rect key="frame" x="0.0" y="0.0" width="166" height="146"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="166" height="146"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="29u-GU-LZN">
+                        <rect key="frame" x="0.0" y="0.0" width="166" height="146"/>
+                    </imageView>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="29u-GU-LZN" secondAttribute="bottom" id="3Jr-Ar-N8O"/>
+                <constraint firstItem="29u-GU-LZN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="7Re-6Y-vA2"/>
+                <constraint firstItem="29u-GU-LZN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Bnp-XI-LHz"/>
+                <constraint firstAttribute="trailing" secondItem="29u-GU-LZN" secondAttribute="trailing" id="es4-KZ-Zyr"/>
+            </constraints>
+            <size key="customSize" width="166" height="146"/>
+            <connections>
+                <outlet property="imgView" destination="29u-GU-LZN" id="i13-II-fza"/>
+            </connections>
+            <point key="canvasLocation" x="313" y="268"/>
+        </collectionViewCell>
+    </objects>
+</document>

@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>MJExtension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-XHWebImageAutoSizeExample.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>66BCC56BAD8DE3368FCB36482FD08264</key>
+		<key>133C5CE1A176F8E2B9BE7DAFFAEB9FDD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D09A14F6A1262D5CDCD38415CD3637BC</key>
+		<key>A316B54C67E947D23CECD230FA5BFAEF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B99E423860504A3B81B78382468933EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

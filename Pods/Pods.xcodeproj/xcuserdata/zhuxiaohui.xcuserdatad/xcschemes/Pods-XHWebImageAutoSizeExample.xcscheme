@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'D09A14F6A1262D5CDCD38415CD3637BC'
+               BlueprintIdentifier = 'B99E423860504A3B81B78382468933EC'
                BlueprintName = 'Pods-XHWebImageAutoSizeExample'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-XHWebImageAutoSizeExample.a'>

@@ -69,7 +69,7 @@
  *  @param indexPaths indexPaths
  *  @param url        imageURL
  */
--(void)xh_reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths URL:(NSURL *)url;
+-(void)xh_reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths forURL:(NSURL *)url;
 
 @end
 
@@ -81,6 +81,6 @@
  *  @param indexPaths indexPaths
  *  @param url        imageURL
  */
--(void)xh_reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths URL:(NSURL *)url;
+-(void)xh_reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths forURL:(NSURL *)url;
 
 @end
