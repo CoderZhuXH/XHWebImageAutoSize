@@ -121,7 +121,7 @@
     NSData *data = [self dataFromDict:stateDict];
     NSString *keyName = key.reloadKeyName;
     [self.memCache setObject:data forKey:keyName];
-    return [[NSFileManager defaultManager] createFileAtPath:[self reloadCachePathForKey:keyName] contents:data attributes:nil];
+    return [self.fileManager createFileAtPath:[self reloadCachePathForKey:keyName] contents:data attributes:nil];
 }
 -(void)storeReloadState:(BOOL)state forKey:(NSString *)key completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock{
     
@@ -236,22 +236,22 @@
     
 }
 -(void)checkDirectory:(NSString *)path {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
+
     BOOL isDir;
-    if (![fileManager fileExistsAtPath:path isDirectory:&isDir]) {
+    if (![self.fileManager fileExistsAtPath:path isDirectory:&isDir]) {
         [self createBaseDirectoryAtPath:path];
     } else {
         
         if (!isDir) {
             NSError *error = nil;
-            [fileManager removeItemAtPath:path error:&error];
+            [self.fileManager removeItemAtPath:path error:&error];
             [self createBaseDirectoryAtPath:path];
         }
     }
 }
 - (void)createBaseDirectoryAtPath:(NSString *)path {
     __autoreleasing NSError *error = nil;
-    [[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:YES
+    [self.fileManager createDirectoryAtPath:path withIntermediateDirectories:YES
                                                attributes:nil error:&error];
     if (error) {
         DebugLog(@"create cache directory failed, error = %@", error);
