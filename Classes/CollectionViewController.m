@@ -87,10 +87,15 @@ static NSString *const cellId = @"CollectionViewCell";
 
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
+        /**
+         *  缓存imageSize
+         */
         [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
             
-            
-            [collectionView xh_reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath] URL:imageURL];
+            /**
+             *  reload item
+             */
+          if(result)  [collectionView xh_reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath] URL:imageURL];
             
         }];
         

@@ -65,10 +65,13 @@ static NSString *const cellId = @"ImageViewCell";
     NSString *url = self.dataArray[indexPath.row];
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
+        /**
+         *  缓存image size
+         */
         [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
             
-            [tableView xh_reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] URL:imageURL];
-            
+            if(result) [tableView xh_reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] URL:imageURL];
+
         }];
         
     }];
