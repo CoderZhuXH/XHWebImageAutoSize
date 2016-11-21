@@ -19,8 +19,8 @@
 *   4.XHWebImageAutoSize就是解决3中的这种情况.
 
 ###特性:
-* 1.异步动态缓存网络图片尺寸,优先从缓存中获取图片尺寸.
-* 2.支持UITableView,UICollectionView动态刷新调整imageView尺寸.
+* 1.异步缓存网络图片尺寸,优先从缓存中获取图片尺寸.
+* 2.支持UITableView,UICollectionView UI动态刷新.
 
 ###技术交流群(群号:537476189).
 
