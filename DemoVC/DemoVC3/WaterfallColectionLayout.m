@@ -6,18 +6,19 @@
 //  Copyright © 2016年 ruiec.cn. All rights reserved.
 //
 
-#import "WaterfallColectionLayout.h"
 
-#define colMargin 5
+#define colSpace 5
 //列数
 #define colCount 3
 
-#define rolMargin 5
+#import "WaterfallColectionLayout.h"
+
 @interface WaterfallColectionLayout ()
 //数组存放每列的总高度
 @property(nonatomic,strong)NSMutableArray* colsHeight;
 //单元格宽度
 @property(nonatomic,assign)CGFloat colWidth;
+
 @end
 
 @implementation WaterfallColectionLayout
@@ -29,8 +30,12 @@
 }
 -(void)prepareLayout{
     [super prepareLayout];
-    self.colWidth =( self.collectionView.frame.size.width - (colCount+1)*colMargin )/colCount;
+    self.colWidth = self.itemWidth;
     self.colsHeight = nil;
+}
+-(CGFloat)itemWidth
+{
+    return (self.collectionView.frame.size.width - (colCount+1)*colSpace )/colCount;
 }
 -(CGSize)collectionViewContentSize{
     NSNumber * longest = self.colsHeight[0];
@@ -53,8 +58,8 @@
             shortCol=i;
         }
     }
-    CGFloat x = (shortCol+1)*colMargin+ shortCol * self.colWidth;
-    CGFloat y = shortest.floatValue+colMargin;
+    CGFloat x = (shortCol+1)*colSpace+ shortCol * self.colWidth;
+    CGFloat y = shortest.floatValue+colSpace;
     
     //获取cell高度
     CGFloat height=0;
@@ -63,7 +68,7 @@
         height = self.heightBlock(indexPath);
     }
     attr.frame= CGRectMake(x, y, self.colWidth, height);
-    self.colsHeight[shortCol]=@(shortest.floatValue+colMargin+height);
+    self.colsHeight[shortCol]=@(shortest.floatValue+colSpace+height);
    
     return attr;
 }

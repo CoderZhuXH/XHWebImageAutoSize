@@ -17,7 +17,7 @@ static NSString *const cellId = @"DemoVC3Cell";
 @interface DemoVC3 ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *myCollectionView;
-@property(nonatomic,strong)UICollectionViewLayout* layout;
+@property(nonatomic,strong)WaterfallColectionLayout* layout;
 @property(nonatomic,strong)NSArray *dataArray;
 
 @end
@@ -31,7 +31,7 @@ static NSString *const cellId = @"DemoVC3Cell";
     self.myCollectionView.collectionViewLayout = self.layout;
 
 }
--(UICollectionViewLayout *)layout{
+-(WaterfallColectionLayout *)layout{
     if(!_layout){
         
         __weak __typeof(self) weakSelf = self;
@@ -48,22 +48,15 @@ static NSString *const cellId = @"DemoVC3Cell";
 -(CGFloat )itemHeightAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *url = self.dataArray[indexPath.row];
-    CGFloat itemWidth = [self itemWidth];
-    
     /**
      *  参数1:图片URL
      *  参数2:imageView 宽度
      *  参数3:预估高度,此高度越接近真实高度效果越好
      */
     
-    CGFloat itemHeight = [XHWebImageAutoSize imageHeightForURL:[NSURL URLWithString:url] layoutWidth:itemWidth estimateHeight:200];
-    
-    return itemHeight;
+    return [XHWebImageAutoSize imageHeightForURL:[NSURL URLWithString:url] layoutWidth:self.layout.itemWidth estimateHeight:200];
 }
--(CGFloat )itemWidth
-{
-    return ([UIScreen mainScreen].bounds.size.width-3*5)/3.0;
-}
+
 -(NSArray *)dataArray{
     if(_dataArray==nil)
     {
