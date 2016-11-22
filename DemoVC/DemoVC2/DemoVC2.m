@@ -49,7 +49,7 @@ static NSString *const cellId = @"DemoVC2Cell";
     /**
      *  参数1:图片URL
      *  参数2:imageView 宽度
-     *  参数3:预估高度,此高度越接近真实高度效果越好
+     *  参数3:预估高度,(此高度仅在图片尚未加载出来前起作用,不影响真实高度)
      */
     CGFloat imageHeight = [XHWebImageAutoSize imageHeightForURL:[NSURL URLWithString:model.top_image] layoutWidth:[UIScreen mainScreen].bounds.size.width-16 estimateHeight:200];
     //cell高度 = 上间隙8+image高度+文字高度60+下间隙8
