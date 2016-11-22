@@ -90,7 +90,7 @@
     /**
      *  参数1:图片URL
      *  参数2:imageView 宽度
-     *  参数3:预估高度,此高度越接近真实高度效果越好
+     *  参数3:预估高度(此高度仅在图片尚未加载出来前起作用,不影响真实高度)
      */
     return [XHWebImageAutoSize imageHeightForURL:[NSURL URLWithString:url] layoutWidth:[UIScreen mainScreen].bounds.size.width-16 estimateHeight:200];
 }   
