@@ -257,7 +257,7 @@
         DebugLog(@"create cache directory failed, error = %@", error);
     } else {
         
-        DebugLog(@"path = %@",path);
+        //DebugLog(@"path = %@",path);
         [self addDoNotBackupAttribute:path];
     }
 }

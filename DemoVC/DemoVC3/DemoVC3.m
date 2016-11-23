@@ -89,7 +89,7 @@ static NSString *const cellId = @"DemoVC3Cell";
             /**
              *  reload item
              */
-           if(result) [collectionView xh_reloadItemsAtIndexPaths:[NSArray arrayWithObject:indexPath] forURL:imageURL];
+            if(result) [collectionView xh_reloadItemAtIndexPath:indexPath forURL: imageURL];
             
         }];
         

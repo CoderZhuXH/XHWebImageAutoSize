@@ -73,7 +73,8 @@ static NSString *const cellId = @"DemoVC2Cell";
          */
         [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
             
-            if(result)  [tableView xh_reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] forURL:imageURL];
+            //reload row
+            if(result)  [tableView xh_reloadRowAtIndexPath:indexPath forURL: imageURL];
             
         }];
         
