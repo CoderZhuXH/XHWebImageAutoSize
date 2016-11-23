@@ -20,7 +20,7 @@
 
 ###特性:
 * 1.异步缓存网络图片尺寸,优先从缓存中获取图片尺寸.
-* 2.支持UITableView,UICollectionView UI动态刷新.
+* 2.UITableView,UICollectionView UI动态更新.
 
 ###技术交流群(群号:537476189).
 
@@ -30,7 +30,53 @@
 ## 效果
 ![](/Demo1.png) ![](/Demo2.png) ![](/Demo3.png)
 
+
+## 使用方法
+
+####1.此处以在UITableView中使用,UITableViewCell上仅有一个UIImageView为例(其他示例详见DEMO)
+```objc
+   
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *url = self.dataArray[indexPath.row];
+    /**
+     *  参数1:图片URL
+     *  参数2:imageView 宽度
+     *  参数3:预估高度(此高度仅在图片尚未加载出来前起作用,不影响真实高度)
+     */
+    return [XHWebImageAutoSize imageHeightForURL:[NSURL URLWithString:url] layoutWidth:[UIScreen mainScreen].bounds.size.width-16 estimateHeight:200];
+}   
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    DemoVC1Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
+    if(!cell)
+    {
+        cell = [[DemoVC1Cell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
+    }
+    NSString *url = self.dataArray[indexPath.row];
+    //加载网络图片使用SDWebImage
+    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+        
+        /**
+         *  缓存image size
+         */
+        [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
+            
+           /**
+            *  尺寸缓存成功,reload cell
+            */
+            if(result)  [tableView  xh_reloadRowAtIndexPath:indexPath forURL:imageURL];
+            
+        }];
+        
+    }];
+    return cell;
+}
+```
 ##API
+
+*   1.获取图片高度/尺寸及缓存相关
 
 ```objc
 /**
@@ -63,64 +109,58 @@
 +(void)storeImageSize:(UIImage *)image forURL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock;
 
 /**
- *  Reload rows
+ *  Get reload state from cache,query the disk cache synchronously after checking the memory cache
  *
- *  @param indexPaths indexPaths
- *  @param url        imageURL
+ *  @param url imageURL
+ *
+ *  @return reloadState
  */
--(void)xh_reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths forURL:(NSURL *)url;
++(BOOL)reloadStateFromCacheForURL:(NSURL *)url;
 
 /**
- *  Reload items
+ *  Store an reloadState into memory and disk cache
  *
- *  @param indexPaths indexPaths
+ *  @param state          reloadState
+ *  @param url            imageURL
+ *  @param completedBlock An block that should be executed after the reloadState has been saved (optional)
+ */
++(void)storeReloadState:(BOOL)state forURL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock;
+```
+
+*   2.tableView reload相关
+
+```objc
+
+/**
+ *  Reload row
+ *
+ *  @param indexPath indexPath
  *  @param url        imageURL
  */
--(void)xh_reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths forURL:(NSURL *)url;
+-(void)xh_reloadRowAtIndexPath:(NSIndexPath *)indexPath forURL:(NSURL *)url;
+
+/**
+ *  Reload row withRowAnimation
+ *
+ *  @param indexPath indexPath
+ *  @param animation UITableViewRowAnimation
+ *  @param url       imageURL
+ */
+-(void)xh_reloadRowAtIndexPath:(NSIndexPath *)indexPath withRowAnimation:(UITableViewRowAnimation)animation forURL:(NSURL *)url;
 
 ```
-## 使用方法
 
-####1.UITableView中使用(此处以UITableViewCell 上仅有一个UIImageView为例)(其他示例详见DEMO)
+*   3.collectionView reload相关
+
 ```objc
-   
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSString *url = self.dataArray[indexPath.row];
-    /**
-     *  参数1:图片URL
-     *  参数2:imageView 宽度
-     *  参数3:预估高度(此高度仅在图片尚未加载出来前起作用,不影响真实高度)
-     */
-    return [XHWebImageAutoSize imageHeightForURL:[NSURL URLWithString:url] layoutWidth:[UIScreen mainScreen].bounds.size.width-16 estimateHeight:200];
-}   
+/**
+ *  Reload item
+ *
+ *  @param indexPath indexPath
+ *  @param url        imageURL
+ */
+-(void)xh_reloadItemAtIndexPath:(NSIndexPath *)indexPath forURL:(NSURL *)url;
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    DemoVC1Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if(!cell)
-    {
-        cell = [[DemoVC1Cell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
-    }
-    NSString *url = self.dataArray[indexPath.row];
-    //加载网络图片使用SDWebImage
-    [cell.imgView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
-        /**
-         *  缓存image size
-         */
-        [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
-            
-           /**
-            *  尺寸缓存成功,刷新该cell
-            */
-            if(result)  [tableView xh_reloadRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] forURL:imageURL];
-            
-        }];
-        
-    }];
-    return cell;
-}
 ```
 ##  安装
 ### 1.手动添加:<br>
