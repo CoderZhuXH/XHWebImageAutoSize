@@ -3,7 +3,7 @@
 //  XHWebImageHeightLayoutExample
 //
 //  Created by zhuxiaohui on 2016/11/15.
-//  Copyright © 2016年 ruiec.cn. All rights reserved.
+//  Copyright © 2016年 it7090.com. All rights reserved.
 //
 
 #import "DemoVC1Cell.h"
@@ -12,7 +12,9 @@
 
 @implementation DemoVC1Cell
 
+
 - (void)awakeFromNib {
+    [super awakeFromNib];
     // Initialization code
 }
 
