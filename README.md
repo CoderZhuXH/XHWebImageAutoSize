@@ -1,7 +1,7 @@
 
 # XHWebImageAutoSize
 
-###网络图片尺寸/高度自适应解决方案
+### 网络图片尺寸/高度自适应解决方案
 
 [![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg?maxAge=2592000)](https://github.com/CoderZhuXH/XHWebImageAutoSize)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/CoderZhuXH/XHWebImageAutoSize)
@@ -12,17 +12,17 @@
 
 ==============
 
-###前言:
+### 前言:
 *   1.iOS开发中,常碰到网络图片需要做尺寸适配(使显示出来的图片不变形)
 *   2.最好的解决方案是:后台把图片的分辨率拼接在图片的URL地址中,我们截取获得分辨率,从而根据宽高比,来适配imageView尺寸.
 *   3.但当后台所给图片URL地址中没有分辨率,他又不肯加时,只好我们自己来解决了.
 *   4.XHWebImageAutoSize就是解决3中的这种情况.
 
-###特性:
+### 特性:
 * 1.异步缓存网络图片尺寸,优先从缓存中获取图片尺寸.
 * 2.UITableView,UICollectionView UI动态更新.
 
-###技术交流群(群号:537476189).
+### 技术交流群(群号:537476189).
 
 ### 更新记录:
 *    2016.11.21 -- v1.0
@@ -33,7 +33,7 @@
 
 ## 使用方法
 
-####1.此处以在UITableView中使用,UITableViewCell上仅有一个UIImageView为例(其他示例详见DEMO)
+####    1.此处以在UITableView中使用,UITableViewCell上仅有一个UIImageView为例(其他示例详见DEMO)
 ```objc
    
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -74,7 +74,7 @@
     return cell;
 }
 ```
-##API
+##  API
 
 *   1.获取图片高度/尺寸及缓存相关
 

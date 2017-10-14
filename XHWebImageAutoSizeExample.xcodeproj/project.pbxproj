@@ -356,6 +356,7 @@
 				TargetAttributes = {
 					0C0175B31DDBFDD5000299B6 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = PM92586XSM;
 					};
 					0C0175CC1DDBFDD5000299B6 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -623,7 +624,7 @@
 			baseConfigurationReference = 6FDE4A4D02C792F17BB9010B /* Pods-XHWebImageAutoSizeExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PM92586XSM;
 				INFOPLIST_FILE = XHWebImageAutoSizeExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it7090.com.XHWebImageAutoSizeExample;
@@ -636,7 +637,7 @@
 			baseConfigurationReference = AC4AA64D985D049FFE0E2EA0 /* Pods-XHWebImageAutoSizeExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PM92586XSM;
 				INFOPLIST_FILE = XHWebImageAutoSizeExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it7090.com.XHWebImageAutoSizeExample;

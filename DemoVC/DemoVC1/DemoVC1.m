@@ -69,7 +69,6 @@ static NSString *const cellId = @"DemoVC1Cell";
             
             //reload row
             if(result)  [tableView  xh_reloadRowAtIndexPath:indexPath forURL:imageURL];
-            
         }];
         
     }];

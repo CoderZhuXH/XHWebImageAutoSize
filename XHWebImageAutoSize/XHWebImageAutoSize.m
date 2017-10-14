@@ -27,7 +27,6 @@ static CGFloat const estimateDefaultHeight = 100;
     }
     return showHeight;
 }
-
 +(void)storeImageSize:(UIImage *)image forURL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock{
     
     [[XHWebImageAutoSizeCache shardCache] storeImageSize:image forKey:[self cacheKeyForURL:url] completed:completedBlock];
