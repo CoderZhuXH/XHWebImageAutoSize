@@ -81,15 +81,11 @@ static NSString *const cellId = @"DemoVC3Cell";
 
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
-        /**
-         *  缓存imageSize
-         */
+        /**  缓存imageSize */
         [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
             
-            /**
-             *  reload item
-             */
-            if(result) [collectionView xh_reloadItemAtIndexPath:indexPath forURL: imageURL];
+            /** reload */
+            if(result) [collectionView xh_reloadDataForURL:imageURL];
             
         }];
         

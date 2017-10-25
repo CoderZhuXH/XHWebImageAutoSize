@@ -33,6 +33,9 @@
 		0CD98AB11DE1B293008ADDCA /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CD98AAD1DE1B292008ADDCA /* images.json */; };
 		0CD98AB21DE1B293008ADDCA /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CD98AAE1DE1B293008ADDCA /* news.json */; };
 		0CD98AB31DE1B293008ADDCA /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD98AB01DE1B293008ADDCA /* NewsModel.m */; };
+		606AF6AF1FA0875F00CD95BA /* UITableView+XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 606AF6AE1FA0875F00CD95BA /* UITableView+XHWebImageAutoSize.m */; };
+		606AF6B21FA0878A00CD95BA /* UICollectionView+XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 606AF6B11FA0878A00CD95BA /* UICollectionView+XHWebImageAutoSize.m */; };
+		606AF6B51FA088A300CD95BA /* XHWebImageAutoSizeConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 606AF6B41FA088A300CD95BA /* XHWebImageAutoSizeConst.m */; };
 		60816691255288601031FEC4 /* libPods-XHWebImageAutoSizeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 372BA811A75A4FA3C2295DF8 /* libPods-XHWebImageAutoSizeExample.a */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +102,12 @@
 		0CD98AAF1DE1B293008ADDCA /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
 		0CD98AB01DE1B293008ADDCA /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
 		372BA811A75A4FA3C2295DF8 /* libPods-XHWebImageAutoSizeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XHWebImageAutoSizeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		606AF6AD1FA0875F00CD95BA /* UITableView+XHWebImageAutoSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+XHWebImageAutoSize.h"; sourceTree = "<group>"; };
+		606AF6AE1FA0875F00CD95BA /* UITableView+XHWebImageAutoSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+XHWebImageAutoSize.m"; sourceTree = "<group>"; };
+		606AF6B01FA0878A00CD95BA /* UICollectionView+XHWebImageAutoSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+XHWebImageAutoSize.h"; sourceTree = "<group>"; };
+		606AF6B11FA0878A00CD95BA /* UICollectionView+XHWebImageAutoSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+XHWebImageAutoSize.m"; sourceTree = "<group>"; };
+		606AF6B31FA088A300CD95BA /* XHWebImageAutoSizeConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHWebImageAutoSizeConst.h; sourceTree = "<group>"; };
+		606AF6B41FA088A300CD95BA /* XHWebImageAutoSizeConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSizeConst.m; sourceTree = "<group>"; };
 		6FDE4A4D02C792F17BB9010B /* Pods-XHWebImageAutoSizeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHWebImageAutoSizeExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XHWebImageAutoSizeExample/Pods-XHWebImageAutoSizeExample.debug.xcconfig"; sourceTree = "<group>"; };
 		AC4AA64D985D049FFE0E2EA0 /* Pods-XHWebImageAutoSizeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHWebImageAutoSizeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-XHWebImageAutoSizeExample/Pods-XHWebImageAutoSizeExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -206,6 +215,12 @@
 			children = (
 				0C01761A1DDBFE7A000299B6 /* XHWebImageAutoSize.h */,
 				0C01761B1DDBFE7A000299B6 /* XHWebImageAutoSize.m */,
+				606AF6AD1FA0875F00CD95BA /* UITableView+XHWebImageAutoSize.h */,
+				606AF6AE1FA0875F00CD95BA /* UITableView+XHWebImageAutoSize.m */,
+				606AF6B01FA0878A00CD95BA /* UICollectionView+XHWebImageAutoSize.h */,
+				606AF6B11FA0878A00CD95BA /* UICollectionView+XHWebImageAutoSize.m */,
+				606AF6B31FA088A300CD95BA /* XHWebImageAutoSizeConst.h */,
+				606AF6B41FA088A300CD95BA /* XHWebImageAutoSizeConst.m */,
 				0C01761C1DDBFE7A000299B6 /* XHWebImageAutoSizeCache.h */,
 				0C01761D1DDBFE7A000299B6 /* XHWebImageAutoSizeCache.m */,
 			);
@@ -356,7 +371,7 @@
 				TargetAttributes = {
 					0C0175B31DDBFDD5000299B6 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = PM92586XSM;
+						DevelopmentTeam = 3VC3TP3LE9;
 					};
 					0C0175CC1DDBFDD5000299B6 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -476,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				606AF6B51FA088A300CD95BA /* XHWebImageAutoSizeConst.m in Sources */,
 				0C0176351DDBFE7A000299B6 /* XHWebImageAutoSizeCache.m in Sources */,
 				0C0175BC1DDBFDD5000299B6 /* AppDelegate.m in Sources */,
 				0CD98AA51DE1AB4F008ADDCA /* DemoVC1.m in Sources */,
@@ -483,7 +499,9 @@
 				0CD98AAA1DE1ABBF008ADDCA /* DemoVC2.m in Sources */,
 				0CD98A951DE19E33008ADDCA /* WaterfallColectionLayout.m in Sources */,
 				0CD98A961DE19E33008ADDCA /* RootVC.m in Sources */,
+				606AF6B21FA0878A00CD95BA /* UICollectionView+XHWebImageAutoSize.m in Sources */,
 				0C0175B91DDBFDD5000299B6 /* main.m in Sources */,
+				606AF6AF1FA0875F00CD95BA /* UITableView+XHWebImageAutoSize.m in Sources */,
 				0CD98A9B1DE1A164008ADDCA /* DemoVC2Cell.m in Sources */,
 				0CD98AB31DE1B293008ADDCA /* NewsModel.m in Sources */,
 				0CD98A911DE19E33008ADDCA /* DemoVC3Cell.m in Sources */,
@@ -624,7 +642,7 @@
 			baseConfigurationReference = 6FDE4A4D02C792F17BB9010B /* Pods-XHWebImageAutoSizeExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PM92586XSM;
+				DEVELOPMENT_TEAM = 3VC3TP3LE9;
 				INFOPLIST_FILE = XHWebImageAutoSizeExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it7090.com.XHWebImageAutoSizeExample;
@@ -637,7 +655,7 @@
 			baseConfigurationReference = AC4AA64D985D049FFE0E2EA0 /* Pods-XHWebImageAutoSizeExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = PM92586XSM;
+				DEVELOPMENT_TEAM = 3VC3TP3LE9;
 				INFOPLIST_FILE = XHWebImageAutoSizeExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it7090.com.XHWebImageAutoSizeExample;

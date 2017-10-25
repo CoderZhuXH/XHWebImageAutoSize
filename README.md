@@ -58,16 +58,10 @@
     //加载网络图片使用SDWebImage
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
-        /**
-         *  缓存image size
-         */
+        /** 缓存image size */
         [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
-            
-           /**
-            *  尺寸缓存成功,reload cell
-            */
-            if(result)  [tableView  xh_reloadRowAtIndexPath:indexPath forURL:imageURL];
-            
+            /** reload  */
+            if(result)  [tableView  xh_reloadDataForURL:imageURL];
         }];
         
     }];
@@ -127,39 +121,29 @@
 +(void)storeReloadState:(BOOL)state forURL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock;
 ```
 
-*   2.tableView reload相关
+*   2.tableView reload
 
 ```objc
 
 /**
- *  Reload row
- *
- *  @param indexPath indexPath
- *  @param url        imageURL
- */
--(void)xh_reloadRowAtIndexPath:(NSIndexPath *)indexPath forURL:(NSURL *)url;
+ Reload tableView
 
-/**
- *  Reload row withRowAnimation
- *
- *  @param indexPath indexPath
- *  @param animation UITableViewRowAnimation
- *  @param url       imageURL
+ @param url imageURL
  */
--(void)xh_reloadRowAtIndexPath:(NSIndexPath *)indexPath withRowAnimation:(UITableViewRowAnimation)animation forURL:(NSURL *)url;
+-(void)xh_reloadDataForURL:(NSURL *)url;
 
 ```
 
-*   3.collectionView reload相关
+*   3.collectionView reload
 
 ```objc
+
 /**
- *  Reload item
- *
- *  @param indexPath indexPath
- *  @param url        imageURL
+ Reload collectionView
+ 
+ @param url imageURL
  */
--(void)xh_reloadItemAtIndexPath:(NSIndexPath *)indexPath forURL:(NSURL *)url;
+-(void)xh_reloadDataForURL:(NSURL *)url;
 
 ```
 ##  安装

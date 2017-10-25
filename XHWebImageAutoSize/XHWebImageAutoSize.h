@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "UITableView+XHWebImageAutoSize.h"
+#import "UICollectionView+XHWebImageAutoSize.h"
 #import "XHWebImageAutoSizeCache.h"
-
-// 过期提醒
-#define XHWebImageAutoSizeDeprecated(instead) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, instead)
 
 @interface XHWebImageAutoSize : NSObject
 
@@ -64,53 +63,4 @@
 
 @end
 
-@interface UITableView (XHWebImageAutoSize)
 
-/**
- *  Reload row
- *
- *  @param indexPath indexPath
- *  @param url        imageURL
- */
--(void)xh_reloadRowAtIndexPath:(NSIndexPath *)indexPath forURL:(NSURL *)url;
-
-/**
- *  Reload row withRowAnimation
- *
- *  @param indexPath indexPath
- *  @param animation UITableViewRowAnimation
- *  @param url       imageURL
- */
--(void)xh_reloadRowAtIndexPath:(NSIndexPath *)indexPath withRowAnimation:(UITableViewRowAnimation)animation forURL:(NSURL *)url;
-
-#pragma mark - 过期
-/**
- *  Reload rows
- *
- *  @param indexPaths indexPaths
- *  @param url        imageURL
- */
--(void)xh_reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths forURL:(NSURL *)url XHWebImageAutoSizeDeprecated("请使用xh_reloadRowAtIndexPath:forURL:");
-;
-
-@end
-
-@interface UICollectionView (XHWebImageAutoSize)
-
-/**
- *  Reload item
- *
- *  @param indexPath indexPath
- *  @param url        imageURL
- */
--(void)xh_reloadItemAtIndexPath:(NSIndexPath *)indexPath forURL:(NSURL *)url;
-
-#pragma mark - 过期
-/**
- *  Reload items
- *
- *  @param indexPaths indexPaths
- *  @param url        imageURL
- */
--(void)xh_reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths forURL:(NSURL *)url  XHWebImageAutoSizeDeprecated("请使用xh_reloadItemAtIndexPath:forURL:");
-@end

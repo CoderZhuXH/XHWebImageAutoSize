@@ -8,12 +8,8 @@
 
 #import "XHWebImageAutoSizeCache.h"
 #import <CommonCrypto/CommonDigest.h>
+#import "XHWebImageAutoSizeConst.h"
 
-#ifdef DEBUG
-#define DebugLog(...) NSLog(__VA_ARGS__)
-#else
-#define DebugLog(...)
-#endif
 
 @interface NSString (CacheFileName)
 
@@ -193,7 +189,7 @@
     NSError *error;
     NSData *data =[NSJSONSerialization dataWithJSONObject:dict options:NSJSONWritingPrettyPrinted error:&error];
     if (error) {
-        DebugLog(@"ERROR, faild to get json data");
+        XHDebugLog(@"ERROR, faild to get json data");
         return nil;
     }
     return data;
@@ -254,10 +250,9 @@
     [self.fileManager createDirectoryAtPath:path withIntermediateDirectories:YES
                                                attributes:nil error:&error];
     if (error) {
-        DebugLog(@"create cache directory failed, error = %@", error);
+        XHDebugLog(@"create cache directory failed, error = %@", error);
     } else {
-        
-        //DebugLog(@"path = %@",path);
+
         [self addDoNotBackupAttribute:path];
     }
 }
@@ -266,7 +261,7 @@
     NSError *error = nil;
     [url setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:&error];
     if (error) {
-        DebugLog(@"error to set do not backup attribute, error = %@", error);
+        XHDebugLog(@"error to set do not backup attribute, error = %@", error);
     }
 }
 

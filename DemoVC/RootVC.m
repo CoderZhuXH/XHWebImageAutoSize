@@ -67,6 +67,8 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
     NSString *title = self.dataArray[indexPath.row];
     Class class = NSClassFromString(self.vcArray[indexPath.row]);
     UIViewController *VC = [[class alloc]init];

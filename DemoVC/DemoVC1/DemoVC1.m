@@ -55,20 +55,16 @@ static NSString *const cellId = @"DemoVC1Cell";
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DemoVC1Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if(!cell)
-    {
+    if(!cell){
         cell = [[DemoVC1Cell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     NSString *url = self.dataArray[indexPath.row];
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
-        /**
-         *  缓存image size
-         */
+        /** 缓存image size */
         [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
-            
-            //reload row
-            if(result)  [tableView  xh_reloadRowAtIndexPath:indexPath forURL:imageURL];
+            /** reload  */
+            if(result)  [tableView  xh_reloadDataForURL:imageURL];
         }];
         
     }];

@@ -25,7 +25,7 @@ static NSString *const cellId = @"DemoVC2Cell";
     [super viewDidLoad];
     
     [self.tableView registerNib:[UINib nibWithNibName:cellId bundle:nil] forCellReuseIdentifier:cellId];
-    
+
 }
 -(NSArray *)dataArray{
     if(_dataArray==nil)
@@ -68,14 +68,10 @@ static NSString *const cellId = @"DemoVC2Cell";
     cell.countLab.text = [NSString stringWithFormat:@"回复:%ld",model.reply_count];
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:model.top_image] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
-        /**
-         *  缓存image size
-         */
+        /**  缓存image size */
         [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
-            
-            //reload row
-            if(result)  [tableView xh_reloadRowAtIndexPath:indexPath forURL: imageURL];
-            
+            /** reload */
+            if(result)  [tableView xh_reloadDataForURL:imageURL];
         }];
         
     }];
