@@ -44,5 +44,4 @@
  */
 -(void)xh_reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths forURL:(NSURL *)url XHWebImageAutoSizeDeprecated("请使用xh_reloadDataForURL:");
 ;
-
 @end

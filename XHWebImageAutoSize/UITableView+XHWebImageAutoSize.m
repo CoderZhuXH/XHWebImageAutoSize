@@ -24,6 +24,7 @@
 -(void)xh_reloadRowAtIndexPath:(NSIndexPath *)indexPath forURL:(NSURL *)url{
     [self xh_reloadRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationNone forURL:url];
 }
+
 -(void)xh_reloadRowAtIndexPath:(NSIndexPath *)indexPath withRowAnimation:(UITableViewRowAnimation)animation forURL:(NSURL *)url{
     BOOL reloadState = [XHWebImageAutoSize reloadStateFromCacheForURL:url];
     if(!reloadState){
@@ -31,6 +32,7 @@
         [XHWebImageAutoSize storeReloadState:YES forURL:url completed:nil];
     }
 }
+
 -(void)xh_reloadRowsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths forURL:(NSURL *)url{
     [self xh_reloadRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationNone forURL:url];
 }

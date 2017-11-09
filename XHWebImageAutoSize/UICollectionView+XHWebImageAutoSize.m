@@ -26,6 +26,7 @@
         [XHWebImageAutoSize storeReloadState:YES forURL:url completed:nil];
     }
 }
+
 -(void)xh_reloadItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths forURL:(NSURL *)url{
     BOOL reloadState = [XHWebImageAutoSize reloadStateFromCacheForURL:url];
     if(!reloadState){
