@@ -4,7 +4,6 @@
 ### 网络图片尺寸/高度自适应解决方案
 
 [![AppVeyor](https://img.shields.io/appveyor/ci/gruntjs/grunt.svg?maxAge=2592000)](https://github.com/CoderZhuXH/XHWebImageAutoSize)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/CoderZhuXH/XHWebImageAutoSize)
 [![Version Status](https://img.shields.io/cocoapods/v/XHWebImageAutoSize.svg?style=flat)](http://cocoadocs.org/docsets/XHWebImageAutoSize)
 [![Support](https://img.shields.io/badge/support-iOS%207%2B-brightgreen.svg)](https://github.com/CoderZhuXH/XHWebImageAutoSize)
 [![Pod Platform](https://img.shields.io/cocoapods/p/XHWebImageAutoSize.svg?style=flat)](http://cocoadocs.org/docsets/XHWebImageAutoSize/)
