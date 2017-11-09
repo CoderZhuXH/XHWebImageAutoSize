@@ -33,8 +33,7 @@
 ####    1.此处以在UITableView中使用,UITableViewCell上仅有一个UIImageView为例(其他示例详见DEMO)
 ```objc
    
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *url = self.dataArray[indexPath.row];
     /**
      *  参数1:图片URL
@@ -44,23 +43,19 @@
     return [XHWebImageAutoSize imageHeightForURL:[NSURL URLWithString:url] layoutWidth:[UIScreen mainScreen].bounds.size.width-16 estimateHeight:200];
 }   
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DemoVC1Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if(!cell)
-    {
+    if(!cell){
         cell = [[DemoVC1Cell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     NSString *url = self.dataArray[indexPath.row];
     //加载网络图片使用SDWebImage
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
         /** 缓存image size */
         [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
             /** reload  */
             if(result)  [tableView  xh_reloadDataForURL:imageURL];
         }];
-        
     }];
     return cell;
 }
