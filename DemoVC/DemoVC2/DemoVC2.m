@@ -10,7 +10,7 @@
 #import "DemoVC2Cell.h"
 #import "XHWebImageAutoSize.h"
 #import "UIImageView+WebCache.h"
-#import <MJExtension.h>
+#import "YYModel.h"
 #import "NewsModel.h"
 
 static NSString *const cellId = @"DemoVC2Cell";
@@ -32,7 +32,7 @@ static NSString *const cellId = @"DemoVC2Cell";
         NSData *JSONData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"news" ofType:@"json"]];
         NSDictionary *json =  [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
         _dataArray = json[@"data"];
-        _dataArray = [NewsModel mj_objectArrayWithKeyValuesArray:_dataArray];
+        _dataArray = [NSArray yy_modelArrayWithClass:[NewsModel class] json:_dataArray];
     }
     return _dataArray;
 }
