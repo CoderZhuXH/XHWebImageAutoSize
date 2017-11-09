@@ -28,22 +28,18 @@ static NSString *const cellId = @"DemoVC1Cell";
     
 }
 -(NSArray *)dataArray{
-    if(_dataArray==nil)
-    {
-        NSData *JSONData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"images" ofType:@"json"]];
+    if(!_dataArray){
+        NSData *JSONData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"image01" ofType:@"json"]];
         NSDictionary *json =  [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
         _dataArray = json[@"data"];
-        
     }
     return _dataArray;
 }
 #pragma mark-tableView
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArray.count;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *url = self.dataArray[indexPath.row];
     /**
      *  参数1:图片URL
@@ -52,8 +48,7 @@ static NSString *const cellId = @"DemoVC1Cell";
      */
     return [XHWebImageAutoSize imageHeightForURL:[NSURL URLWithString:url] layoutWidth:[UIScreen mainScreen].bounds.size.width-16 estimateHeight:200];
 }
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DemoVC1Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
     if(!cell){
         cell = [[DemoVC1Cell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
@@ -66,7 +61,6 @@ static NSString *const cellId = @"DemoVC1Cell";
             /** reload  */
             if(result)  [tableView  xh_reloadDataForURL:imageURL];
         }];
-        
     }];
     return cell;
 }

@@ -26,7 +26,7 @@
 
 
 ## 效果
-![](/Demo1.png) ![](/Demo2.png) ![](/Demo3.png)
+![](/ScreenShot/Demo1.png) ![](/ScreenShot/Demo2.png) ![](/ScreenShot/Demo3.png)
 
 
 ## 使用方法

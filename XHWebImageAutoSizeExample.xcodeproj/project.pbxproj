@@ -11,8 +11,6 @@
 		0C0175BC1DDBFDD5000299B6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175BB1DDBFDD5000299B6 /* AppDelegate.m */; };
 		0C0175C41DDBFDD5000299B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C0175C31DDBFDD5000299B6 /* Assets.xcassets */; };
 		0C0175C71DDBFDD5000299B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C0175C51DDBFDD5000299B6 /* LaunchScreen.storyboard */; };
-		0C0175D21DDBFDD5000299B6 /* XHWebImageAutoSizeExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175D11DDBFDD5000299B6 /* XHWebImageAutoSizeExampleTests.m */; };
-		0C0175DD1DDBFDD5000299B6 /* XHWebImageAutoSizeExampleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C0175DC1DDBFDD5000299B6 /* XHWebImageAutoSizeExampleUITests.m */; };
 		0C0176341DDBFE7A000299B6 /* XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C01761B1DDBFE7A000299B6 /* XHWebImageAutoSize.m */; };
 		0C0176351DDBFE7A000299B6 /* XHWebImageAutoSizeCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C01761D1DDBFE7A000299B6 /* XHWebImageAutoSizeCache.m */; };
 		0CD98A8D1DE19E33008ADDCA /* DemoVC1Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD98A771DE19E33008ADDCA /* DemoVC1Cell.m */; };
@@ -30,31 +28,15 @@
 		0CD98AA61DE1AB4F008ADDCA /* DemoVC1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD98AA41DE1AB4F008ADDCA /* DemoVC1.xib */; };
 		0CD98AAA1DE1ABBF008ADDCA /* DemoVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD98AA81DE1ABBF008ADDCA /* DemoVC2.m */; };
 		0CD98AAB1DE1ABBF008ADDCA /* DemoVC2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD98AA91DE1ABBF008ADDCA /* DemoVC2.xib */; };
-		0CD98AB11DE1B293008ADDCA /* images.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CD98AAD1DE1B292008ADDCA /* images.json */; };
-		0CD98AB21DE1B293008ADDCA /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 0CD98AAE1DE1B293008ADDCA /* news.json */; };
 		0CD98AB31DE1B293008ADDCA /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD98AB01DE1B293008ADDCA /* NewsModel.m */; };
 		606AF6AF1FA0875F00CD95BA /* UITableView+XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 606AF6AE1FA0875F00CD95BA /* UITableView+XHWebImageAutoSize.m */; };
 		606AF6B21FA0878A00CD95BA /* UICollectionView+XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 606AF6B11FA0878A00CD95BA /* UICollectionView+XHWebImageAutoSize.m */; };
 		606AF6B51FA088A300CD95BA /* XHWebImageAutoSizeConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 606AF6B41FA088A300CD95BA /* XHWebImageAutoSizeConst.m */; };
 		60816691255288601031FEC4 /* libPods-XHWebImageAutoSizeExample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 372BA811A75A4FA3C2295DF8 /* libPods-XHWebImageAutoSizeExample.a */; };
+		60A35B281FB42DE700C18383 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 60A35B261FB42DE700C18383 /* news.json */; };
+		60A35B291FB42DE700C18383 /* image01.json in Resources */ = {isa = PBXBuildFile; fileRef = 60A35B271FB42DE700C18383 /* image01.json */; };
+		60A35B2B1FB42E0800C18383 /* image02.json in Resources */ = {isa = PBXBuildFile; fileRef = 60A35B2A1FB42E0800C18383 /* image02.json */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0C0175CE1DDBFDD5000299B6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C0175AC1DDBFDD5000299B6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0C0175B31DDBFDD5000299B6;
-			remoteInfo = XHWebImageAutoSizeExample;
-		};
-		0C0175D91DDBFDD5000299B6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0C0175AC1DDBFDD5000299B6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0C0175B31DDBFDD5000299B6;
-			remoteInfo = XHWebImageAutoSizeExample;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0C0175B41DDBFDD5000299B6 /* XHWebImageAutoSizeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XHWebImageAutoSizeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,12 +46,6 @@
 		0C0175C31DDBFDD5000299B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C0175C61DDBFDD5000299B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C0175C81DDBFDD5000299B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C0175CD1DDBFDD5000299B6 /* XHWebImageAutoSizeExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XHWebImageAutoSizeExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C0175D11DDBFDD5000299B6 /* XHWebImageAutoSizeExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSizeExampleTests.m; sourceTree = "<group>"; };
-		0C0175D31DDBFDD5000299B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0C0175D81DDBFDD5000299B6 /* XHWebImageAutoSizeExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XHWebImageAutoSizeExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0C0175DC1DDBFDD5000299B6 /* XHWebImageAutoSizeExampleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSizeExampleUITests.m; sourceTree = "<group>"; };
-		0C0175DE1DDBFDD5000299B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C01761A1DDBFE7A000299B6 /* XHWebImageAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHWebImageAutoSize.h; sourceTree = "<group>"; };
 		0C01761B1DDBFE7A000299B6 /* XHWebImageAutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSize.m; sourceTree = "<group>"; };
 		0C01761C1DDBFE7A000299B6 /* XHWebImageAutoSizeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHWebImageAutoSizeCache.h; sourceTree = "<group>"; };
@@ -97,8 +73,6 @@
 		0CD98AA71DE1ABBF008ADDCA /* DemoVC2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoVC2.h; sourceTree = "<group>"; };
 		0CD98AA81DE1ABBF008ADDCA /* DemoVC2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoVC2.m; sourceTree = "<group>"; };
 		0CD98AA91DE1ABBF008ADDCA /* DemoVC2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoVC2.xib; sourceTree = "<group>"; };
-		0CD98AAD1DE1B292008ADDCA /* images.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = images.json; sourceTree = "<group>"; };
-		0CD98AAE1DE1B293008ADDCA /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
 		0CD98AAF1DE1B293008ADDCA /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
 		0CD98AB01DE1B293008ADDCA /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
 		372BA811A75A4FA3C2295DF8 /* libPods-XHWebImageAutoSizeExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XHWebImageAutoSizeExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +82,9 @@
 		606AF6B11FA0878A00CD95BA /* UICollectionView+XHWebImageAutoSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+XHWebImageAutoSize.m"; sourceTree = "<group>"; };
 		606AF6B31FA088A300CD95BA /* XHWebImageAutoSizeConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XHWebImageAutoSizeConst.h; sourceTree = "<group>"; };
 		606AF6B41FA088A300CD95BA /* XHWebImageAutoSizeConst.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSizeConst.m; sourceTree = "<group>"; };
+		60A35B261FB42DE700C18383 /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
+		60A35B271FB42DE700C18383 /* image01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = image01.json; sourceTree = "<group>"; };
+		60A35B2A1FB42E0800C18383 /* image02.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = image02.json; sourceTree = "<group>"; };
 		6FDE4A4D02C792F17BB9010B /* Pods-XHWebImageAutoSizeExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHWebImageAutoSizeExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XHWebImageAutoSizeExample/Pods-XHWebImageAutoSizeExample.debug.xcconfig"; sourceTree = "<group>"; };
 		AC4AA64D985D049FFE0E2EA0 /* Pods-XHWebImageAutoSizeExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XHWebImageAutoSizeExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-XHWebImageAutoSizeExample/Pods-XHWebImageAutoSizeExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,20 +95,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				60816691255288601031FEC4 /* libPods-XHWebImageAutoSizeExample.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0C0175CA1DDBFDD5000299B6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0C0175D51DDBFDD5000299B6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,8 +116,6 @@
 				0CD98A6E1DE19E33008ADDCA /* DemoVC */,
 				0C0176171DDBFE7A000299B6 /* XHWebImageAutoSize */,
 				0C0175B61DDBFDD5000299B6 /* XHWebImageAutoSizeExample */,
-				0C0175D01DDBFDD5000299B6 /* XHWebImageAutoSizeExampleTests */,
-				0C0175DB1DDBFDD5000299B6 /* XHWebImageAutoSizeExampleUITests */,
 				0C0175B51DDBFDD5000299B6 /* Products */,
 				02A13846A4AA0816FDDCD3B9 /* Pods */,
 				EB117F44F33E5F8402251B40 /* Frameworks */,
@@ -165,8 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				0C0175B41DDBFDD5000299B6 /* XHWebImageAutoSizeExample.app */,
-				0C0175CD1DDBFDD5000299B6 /* XHWebImageAutoSizeExampleTests.xctest */,
-				0C0175D81DDBFDD5000299B6 /* XHWebImageAutoSizeExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,24 +151,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		0C0175D01DDBFDD5000299B6 /* XHWebImageAutoSizeExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				0C0175D11DDBFDD5000299B6 /* XHWebImageAutoSizeExampleTests.m */,
-				0C0175D31DDBFDD5000299B6 /* Info.plist */,
-			);
-			path = XHWebImageAutoSizeExampleTests;
-			sourceTree = "<group>";
-		};
-		0C0175DB1DDBFDD5000299B6 /* XHWebImageAutoSizeExampleUITests */ = {
-			isa = PBXGroup;
-			children = (
-				0C0175DC1DDBFDD5000299B6 /* XHWebImageAutoSizeExampleUITests.m */,
-				0C0175DE1DDBFDD5000299B6 /* Info.plist */,
-			);
-			path = XHWebImageAutoSizeExampleUITests;
-			sourceTree = "<group>";
-		};
 		0C0176171DDBFE7A000299B6 /* XHWebImageAutoSize */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,6 +171,7 @@
 		0CD98A6E1DE19E33008ADDCA /* DemoVC */ = {
 			isa = PBXGroup;
 			children = (
+				60A35B251FB42DD000C18383 /* Source */,
 				0CD98AAC1DE1B292008ADDCA /* Model */,
 				0CD98A721DE19E33008ADDCA /* DemoVC1 */,
 				0CD98A791DE19E33008ADDCA /* DemoVC2 */,
@@ -285,12 +227,20 @@
 		0CD98AAC1DE1B292008ADDCA /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0CD98AAD1DE1B292008ADDCA /* images.json */,
-				0CD98AAE1DE1B293008ADDCA /* news.json */,
 				0CD98AAF1DE1B293008ADDCA /* NewsModel.h */,
 				0CD98AB01DE1B293008ADDCA /* NewsModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		60A35B251FB42DD000C18383 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				60A35B271FB42DE700C18383 /* image01.json */,
+				60A35B2A1FB42E0800C18383 /* image02.json */,
+				60A35B261FB42DE700C18383 /* news.json */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		EB117F44F33E5F8402251B40 /* Frameworks */ = {
@@ -324,42 +274,6 @@
 			productReference = 0C0175B41DDBFDD5000299B6 /* XHWebImageAutoSizeExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		0C0175CC1DDBFDD5000299B6 /* XHWebImageAutoSizeExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0C0175E41DDBFDD5000299B6 /* Build configuration list for PBXNativeTarget "XHWebImageAutoSizeExampleTests" */;
-			buildPhases = (
-				0C0175C91DDBFDD5000299B6 /* Sources */,
-				0C0175CA1DDBFDD5000299B6 /* Frameworks */,
-				0C0175CB1DDBFDD5000299B6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0C0175CF1DDBFDD5000299B6 /* PBXTargetDependency */,
-			);
-			name = XHWebImageAutoSizeExampleTests;
-			productName = XHWebImageAutoSizeExampleTests;
-			productReference = 0C0175CD1DDBFDD5000299B6 /* XHWebImageAutoSizeExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		0C0175D71DDBFDD5000299B6 /* XHWebImageAutoSizeExampleUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0C0175E71DDBFDD5000299B6 /* Build configuration list for PBXNativeTarget "XHWebImageAutoSizeExampleUITests" */;
-			buildPhases = (
-				0C0175D41DDBFDD5000299B6 /* Sources */,
-				0C0175D51DDBFDD5000299B6 /* Frameworks */,
-				0C0175D61DDBFDD5000299B6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0C0175DA1DDBFDD5000299B6 /* PBXTargetDependency */,
-			);
-			name = XHWebImageAutoSizeExampleUITests;
-			productName = XHWebImageAutoSizeExampleUITests;
-			productReference = 0C0175D81DDBFDD5000299B6 /* XHWebImageAutoSizeExampleUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -371,15 +285,6 @@
 				TargetAttributes = {
 					0C0175B31DDBFDD5000299B6 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 3VC3TP3LE9;
-					};
-					0C0175CC1DDBFDD5000299B6 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = 0C0175B31DDBFDD5000299B6;
-					};
-					0C0175D71DDBFDD5000299B6 = {
-						CreatedOnToolsVersion = 7.2.1;
-						TestTargetID = 0C0175B31DDBFDD5000299B6;
 					};
 				};
 			};
@@ -397,8 +302,6 @@
 			projectRoot = "";
 			targets = (
 				0C0175B31DDBFDD5000299B6 /* XHWebImageAutoSizeExample */,
-				0C0175CC1DDBFDD5000299B6 /* XHWebImageAutoSizeExampleTests */,
-				0C0175D71DDBFDD5000299B6 /* XHWebImageAutoSizeExampleUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -409,30 +312,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C0175C71DDBFDD5000299B6 /* LaunchScreen.storyboard in Resources */,
+				60A35B291FB42DE700C18383 /* image01.json in Resources */,
 				0C0175C41DDBFDD5000299B6 /* Assets.xcassets in Resources */,
 				0CD98A971DE19E33008ADDCA /* RootVC.xib in Resources */,
 				0CD98A8E1DE19E33008ADDCA /* DemoVC1Cell.xib in Resources */,
-				0CD98AB21DE1B293008ADDCA /* news.json in Resources */,
 				0CD98AAB1DE1ABBF008ADDCA /* DemoVC2.xib in Resources */,
+				60A35B281FB42DE700C18383 /* news.json in Resources */,
 				0CD98AA61DE1AB4F008ADDCA /* DemoVC1.xib in Resources */,
 				0CD98A9C1DE1A164008ADDCA /* DemoVC2Cell.xib in Resources */,
-				0CD98AB11DE1B293008ADDCA /* images.json in Resources */,
+				60A35B2B1FB42E0800C18383 /* image02.json in Resources */,
 				0CD98A941DE19E33008ADDCA /* DemoVC3.xib in Resources */,
 				0CD98A921DE19E33008ADDCA /* DemoVC3Cell.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0C0175CB1DDBFDD5000299B6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0C0175D61DDBFDD5000299B6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,36 +400,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0C0175C91DDBFDD5000299B6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0C0175D21DDBFDD5000299B6 /* XHWebImageAutoSizeExampleTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		0C0175D41DDBFDD5000299B6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0C0175DD1DDBFDD5000299B6 /* XHWebImageAutoSizeExampleUITests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0C0175CF1DDBFDD5000299B6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0C0175B31DDBFDD5000299B6 /* XHWebImageAutoSizeExample */;
-			targetProxy = 0C0175CE1DDBFDD5000299B6 /* PBXContainerItemProxy */;
-		};
-		0C0175DA1DDBFDD5000299B6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0C0175B31DDBFDD5000299B6 /* XHWebImageAutoSizeExample */;
-			targetProxy = 0C0175D91DDBFDD5000299B6 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0C0175C51DDBFDD5000299B6 /* LaunchScreen.storyboard */ = {
@@ -642,7 +503,7 @@
 			baseConfigurationReference = 6FDE4A4D02C792F17BB9010B /* Pods-XHWebImageAutoSizeExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3VC3TP3LE9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = XHWebImageAutoSizeExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it7090.com.XHWebImageAutoSizeExample;
@@ -655,59 +516,11 @@
 			baseConfigurationReference = AC4AA64D985D049FFE0E2EA0 /* Pods-XHWebImageAutoSizeExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3VC3TP3LE9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = XHWebImageAutoSizeExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it7090.com.XHWebImageAutoSizeExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		0C0175E51DDBFDD5000299B6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = XHWebImageAutoSizeExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ruiec.cn.XHWebImageAutoSizeExampleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XHWebImageAutoSizeExample.app/XHWebImageAutoSizeExample";
-			};
-			name = Debug;
-		};
-		0C0175E61DDBFDD5000299B6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = XHWebImageAutoSizeExampleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ruiec.cn.XHWebImageAutoSizeExampleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/XHWebImageAutoSizeExample.app/XHWebImageAutoSizeExample";
-			};
-			name = Release;
-		};
-		0C0175E81DDBFDD5000299B6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = XHWebImageAutoSizeExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ruiec.cn.XHWebImageAutoSizeExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = XHWebImageAutoSizeExample;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		0C0175E91DDBFDD5000299B6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = XHWebImageAutoSizeExampleUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ruiec.cn.XHWebImageAutoSizeExampleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = XHWebImageAutoSizeExample;
-				USES_XCTRUNNER = YES;
 			};
 			name = Release;
 		};
@@ -728,24 +541,6 @@
 			buildConfigurations = (
 				0C0175E21DDBFDD5000299B6 /* Debug */,
 				0C0175E31DDBFDD5000299B6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0C0175E41DDBFDD5000299B6 /* Build configuration list for PBXNativeTarget "XHWebImageAutoSizeExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0C0175E51DDBFDD5000299B6 /* Debug */,
-				0C0175E61DDBFDD5000299B6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0C0175E71DDBFDD5000299B6 /* Build configuration list for PBXNativeTarget "XHWebImageAutoSizeExampleUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0C0175E81DDBFDD5000299B6 /* Debug */,
-				0C0175E91DDBFDD5000299B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -25,48 +25,38 @@
 
     self.navigationItem.title = @"XHWebImageAutoSizeExample";
     self.myTableView.tableFooterView = [[UIView alloc] init];
-    
-    // Do any additional setup after loading the view from its nib.
+
 }
 -(NSArray *)dataArray{
-    if(_dataArray==nil)
-    {
+    if(!_dataArray){
          _dataArray = @[@"UITableView - DemoVC1",@"UITableView - DemoVC2",@"UICollectionView - DemoVC3"
                           ];
     }
     return _dataArray;
 }
--(NSArray *)vcArray
-{
-    if(_vcArray==nil)
-    {
+-(NSArray *)vcArray{
+    if(!_vcArray){
         _vcArray = @[@"DemoVC1",@"DemoVC2",@"DemoVC3"];
     }
     return _vcArray;
 }
 #pragma mark-tableView
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArray.count;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 44.0;
 }
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellId"];
-    if(!cell)
-    {
+    if(!cell){
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"cellId"];
     }
     cell.textLabel.text = self.dataArray[indexPath.row];
     return cell;
 }
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSString *title = self.dataArray[indexPath.row];

@@ -33,64 +33,48 @@ static NSString *const cellId = @"DemoVC3Cell";
 }
 -(WaterfallColectionLayout *)layout{
     if(!_layout){
-        
         __weak __typeof(self) weakSelf = self;
         _layout = [[WaterfallColectionLayout alloc]initWithItemsHeightBlock:^CGFloat(NSIndexPath *index) {
-
             return [weakSelf itemHeightAtIndexPath:index];
-            
         }];
-        
     }
     return _layout;
 }
 
--(CGFloat )itemHeightAtIndexPath:(NSIndexPath *)indexPath
-{
+-(CGFloat )itemHeightAtIndexPath:(NSIndexPath *)indexPath{
     NSString *url = self.dataArray[indexPath.row];
     /**
      *  参数1:图片URL
      *  参数2:imageView 宽度
      *  参数3:预估高度,(此高度仅在图片尚未加载出来前起作用,不影响真实高度)
      */
-    
     return [XHWebImageAutoSize imageHeightForURL:[NSURL URLWithString:url] layoutWidth:self.layout.itemWidth estimateHeight:200];
 }
 
 -(NSArray *)dataArray{
-    if(_dataArray==nil)
-    {
-        NSData *JSONData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"images" ofType:@"json"]];
+    if(!_dataArray){
+        NSData *JSONData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"image02" ofType:@"json"]];
         NSDictionary *json =  [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
         _dataArray = json[@"data"];
-        
     }
     return _dataArray;
 }
 #pragma mark - UICollectionView
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
-{
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.dataArray.count;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     DemoVC3Cell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
- 
     NSString *url = self.dataArray[indexPath.item];
-
     [cell.imgView sd_setImageWithURL:[NSURL URLWithString:url] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
         /**  缓存imageSize */
         [XHWebImageAutoSize storeImageSize:image forURL:imageURL completed:^(BOOL result) {
-            
             /** reload */
             if(result) [collectionView xh_reloadDataForURL:imageURL];
-            
         }];
         
     }];
-    
     return cell;
 }
 

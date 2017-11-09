@@ -28,23 +28,19 @@ static NSString *const cellId = @"DemoVC2Cell";
 
 }
 -(NSArray *)dataArray{
-    if(_dataArray==nil)
-    {
+    if(!_dataArray){
         NSData *JSONData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"news" ofType:@"json"]];
         NSDictionary *json =  [NSJSONSerialization JSONObjectWithData:JSONData options:NSJSONReadingAllowFragments error:nil];
         _dataArray = json[@"data"];
         _dataArray = [NewsModel mj_objectArrayWithKeyValuesArray:_dataArray];
-        
     }
     return _dataArray;
 }
 #pragma mark-tableView
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArray.count;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
    NewsModel *model = self.dataArray[indexPath.row];
     /**
      *  参数1:图片URL
@@ -55,11 +51,9 @@ static NSString *const cellId = @"DemoVC2Cell";
     //cell高度 = 上间隙8+image高度+文字高度60+下间隙8
     return 8+imageHeight+60+8;
 }
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     DemoVC2Cell *cell = [tableView dequeueReusableCellWithIdentifier:cellId];
-    if(!cell)
-    {
+    if(!cell){
         cell = [[DemoVC2Cell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
     }
     NewsModel *model = self.dataArray[indexPath.row];
