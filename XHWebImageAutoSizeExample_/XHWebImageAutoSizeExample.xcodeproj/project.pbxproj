@@ -27,16 +27,16 @@
 		0CD98AAA1DE1ABBF008ADDCA /* DemoVC2.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD98AA81DE1ABBF008ADDCA /* DemoVC2.m */; };
 		0CD98AAB1DE1ABBF008ADDCA /* DemoVC2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CD98AA91DE1ABBF008ADDCA /* DemoVC2.xib */; };
 		0CD98AB31DE1B293008ADDCA /* NewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CD98AB01DE1B293008ADDCA /* NewsModel.m */; };
+		6090418D1FB53DE700E4EBA6 /* UICollectionView+XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 609041841FB53DE700E4EBA6 /* UICollectionView+XHWebImageAutoSize.m */; };
+		6090418E1FB53DE700E4EBA6 /* UITableView+XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 609041861FB53DE700E4EBA6 /* UITableView+XHWebImageAutoSize.m */; };
+		6090418F1FB53DE700E4EBA6 /* XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 609041881FB53DE700E4EBA6 /* XHWebImageAutoSize.m */; };
+		609041901FB53DE700E4EBA6 /* XHWebImageAutoSizeCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090418A1FB53DE700E4EBA6 /* XHWebImageAutoSizeCache.m */; };
+		609041911FB53DE700E4EBA6 /* XHWebImageAutoSizeConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090418C1FB53DE700E4EBA6 /* XHWebImageAutoSizeConst.m */; };
 		60A35B281FB42DE700C18383 /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 60A35B261FB42DE700C18383 /* news.json */; };
 		60A35B291FB42DE700C18383 /* image01.json in Resources */ = {isa = PBXBuildFile; fileRef = 60A35B271FB42DE700C18383 /* image01.json */; };
 		60A35B2B1FB42E0800C18383 /* image02.json in Resources */ = {isa = PBXBuildFile; fileRef = 60A35B2A1FB42E0800C18383 /* image02.json */; };
 		60A35B851FB466D300C18383 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A35B731FB466D300C18383 /* NSObject+YYModel.m */; };
 		60A35B861FB466D300C18383 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A35B751FB466D300C18383 /* YYClassInfo.m */; };
-		60A35C281FB46B2D00C18383 /* XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A35C201FB46B2C00C18383 /* XHWebImageAutoSize.m */; };
-		60A35C291FB46B2D00C18383 /* XHWebImageAutoSizeCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A35C231FB46B2C00C18383 /* XHWebImageAutoSizeCache.m */; };
-		60A35C2A1FB46B2D00C18383 /* XHWebImageAutoSizeConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A35C251FB46B2C00C18383 /* XHWebImageAutoSizeConst.m */; };
-		60A35C2B1FB46B2D00C18383 /* UICollectionView+XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A35C261FB46B2D00C18383 /* UICollectionView+XHWebImageAutoSize.m */; };
-		60A35C2C1FB46B2D00C18383 /* UITableView+XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A35C271FB46B2D00C18383 /* UITableView+XHWebImageAutoSize.m */; };
 		60A35C5F1FB46CD400C18383 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A35C2F1FB46CD300C18383 /* MKAnnotationView+WebCache.m */; };
 		60A35C601FB46CD400C18383 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A35C311FB46CD300C18383 /* NSData+ImageContentType.m */; };
 		60A35C611FB46CD400C18383 /* NSImage+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A35C331FB46CD300C18383 /* NSImage+WebCache.m */; };
@@ -96,6 +96,16 @@
 		0CD98AA91DE1ABBF008ADDCA /* DemoVC2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoVC2.xib; sourceTree = "<group>"; };
 		0CD98AAF1DE1B293008ADDCA /* NewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsModel.h; sourceTree = "<group>"; };
 		0CD98AB01DE1B293008ADDCA /* NewsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsModel.m; sourceTree = "<group>"; };
+		609041831FB53DE700E4EBA6 /* UICollectionView+XHWebImageAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+XHWebImageAutoSize.h"; sourceTree = "<group>"; };
+		609041841FB53DE700E4EBA6 /* UICollectionView+XHWebImageAutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+XHWebImageAutoSize.m"; sourceTree = "<group>"; };
+		609041851FB53DE700E4EBA6 /* UITableView+XHWebImageAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+XHWebImageAutoSize.h"; sourceTree = "<group>"; };
+		609041861FB53DE700E4EBA6 /* UITableView+XHWebImageAutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+XHWebImageAutoSize.m"; sourceTree = "<group>"; };
+		609041871FB53DE700E4EBA6 /* XHWebImageAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHWebImageAutoSize.h; sourceTree = "<group>"; };
+		609041881FB53DE700E4EBA6 /* XHWebImageAutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSize.m; sourceTree = "<group>"; };
+		609041891FB53DE700E4EBA6 /* XHWebImageAutoSizeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHWebImageAutoSizeCache.h; sourceTree = "<group>"; };
+		6090418A1FB53DE700E4EBA6 /* XHWebImageAutoSizeCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSizeCache.m; sourceTree = "<group>"; };
+		6090418B1FB53DE700E4EBA6 /* XHWebImageAutoSizeConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHWebImageAutoSizeConst.h; sourceTree = "<group>"; };
+		6090418C1FB53DE700E4EBA6 /* XHWebImageAutoSizeConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSizeConst.m; sourceTree = "<group>"; };
 		60A35B261FB42DE700C18383 /* news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
 		60A35B271FB42DE700C18383 /* image01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = image01.json; sourceTree = "<group>"; };
 		60A35B2A1FB42E0800C18383 /* image02.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = image02.json; sourceTree = "<group>"; };
@@ -104,16 +114,6 @@
 		60A35B741FB466D300C18383 /* YYClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYClassInfo.h; sourceTree = "<group>"; };
 		60A35B751FB466D300C18383 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
 		60A35B761FB466D300C18383 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
-		60A35C1E1FB46B2C00C18383 /* UITableView+XHWebImageAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+XHWebImageAutoSize.h"; sourceTree = "<group>"; };
-		60A35C1F1FB46B2C00C18383 /* XHWebImageAutoSizeConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHWebImageAutoSizeConst.h; sourceTree = "<group>"; };
-		60A35C201FB46B2C00C18383 /* XHWebImageAutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSize.m; sourceTree = "<group>"; };
-		60A35C211FB46B2C00C18383 /* XHWebImageAutoSizeCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHWebImageAutoSizeCache.h; sourceTree = "<group>"; };
-		60A35C221FB46B2C00C18383 /* XHWebImageAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XHWebImageAutoSize.h; sourceTree = "<group>"; };
-		60A35C231FB46B2C00C18383 /* XHWebImageAutoSizeCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSizeCache.m; sourceTree = "<group>"; };
-		60A35C241FB46B2C00C18383 /* UICollectionView+XHWebImageAutoSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UICollectionView+XHWebImageAutoSize.h"; sourceTree = "<group>"; };
-		60A35C251FB46B2C00C18383 /* XHWebImageAutoSizeConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XHWebImageAutoSizeConst.m; sourceTree = "<group>"; };
-		60A35C261FB46B2D00C18383 /* UICollectionView+XHWebImageAutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UICollectionView+XHWebImageAutoSize.m"; sourceTree = "<group>"; };
-		60A35C271FB46B2D00C18383 /* UITableView+XHWebImageAutoSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+XHWebImageAutoSize.m"; sourceTree = "<group>"; };
 		60A35C2E1FB46CD300C18383 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		60A35C2F1FB46CD300C18383 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		60A35C301FB46CD300C18383 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -180,8 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				0CD98A6E1DE19E33008ADDCA /* DemoVC */,
-				0C0176171DDBFE7A000299B6 /* XHWebImageAutoSize */,
 				0C0175B61DDBFDD5000299B6 /* XHWebImageAutoSizeExample */,
+				609041821FB53DE700E4EBA6 /* XHWebImageAutoSize */,
 				60A35B521FB466D300C18383 /* Vendor */,
 				0C0175B51DDBFDD5000299B6 /* Products */,
 			);
@@ -214,23 +214,6 @@
 				0C0175B81DDBFDD5000299B6 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0C0176171DDBFE7A000299B6 /* XHWebImageAutoSize */ = {
-			isa = PBXGroup;
-			children = (
-				60A35C221FB46B2C00C18383 /* XHWebImageAutoSize.h */,
-				60A35C201FB46B2C00C18383 /* XHWebImageAutoSize.m */,
-				60A35C241FB46B2C00C18383 /* UICollectionView+XHWebImageAutoSize.h */,
-				60A35C261FB46B2D00C18383 /* UICollectionView+XHWebImageAutoSize.m */,
-				60A35C1E1FB46B2C00C18383 /* UITableView+XHWebImageAutoSize.h */,
-				60A35C271FB46B2D00C18383 /* UITableView+XHWebImageAutoSize.m */,
-				60A35C211FB46B2C00C18383 /* XHWebImageAutoSizeCache.h */,
-				60A35C231FB46B2C00C18383 /* XHWebImageAutoSizeCache.m */,
-				60A35C1F1FB46B2C00C18383 /* XHWebImageAutoSizeConst.h */,
-				60A35C251FB46B2C00C18383 /* XHWebImageAutoSizeConst.m */,
-			);
-			path = XHWebImageAutoSize;
 			sourceTree = "<group>";
 		};
 		0CD98A6E1DE19E33008ADDCA /* DemoVC */ = {
@@ -296,6 +279,24 @@
 				0CD98AB01DE1B293008ADDCA /* NewsModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		609041821FB53DE700E4EBA6 /* XHWebImageAutoSize */ = {
+			isa = PBXGroup;
+			children = (
+				609041831FB53DE700E4EBA6 /* UICollectionView+XHWebImageAutoSize.h */,
+				609041841FB53DE700E4EBA6 /* UICollectionView+XHWebImageAutoSize.m */,
+				609041851FB53DE700E4EBA6 /* UITableView+XHWebImageAutoSize.h */,
+				609041861FB53DE700E4EBA6 /* UITableView+XHWebImageAutoSize.m */,
+				609041871FB53DE700E4EBA6 /* XHWebImageAutoSize.h */,
+				609041881FB53DE700E4EBA6 /* XHWebImageAutoSize.m */,
+				609041891FB53DE700E4EBA6 /* XHWebImageAutoSizeCache.h */,
+				6090418A1FB53DE700E4EBA6 /* XHWebImageAutoSizeCache.m */,
+				6090418B1FB53DE700E4EBA6 /* XHWebImageAutoSizeConst.h */,
+				6090418C1FB53DE700E4EBA6 /* XHWebImageAutoSizeConst.m */,
+			);
+			name = XHWebImageAutoSize;
+			path = ../XHWebImageAutoSize;
 			sourceTree = "<group>";
 		};
 		60A35B251FB42DD000C18383 /* Source */ = {
@@ -467,17 +468,16 @@
 				60A35B851FB466D300C18383 /* NSObject+YYModel.m in Sources */,
 				60A35C6E1FB46CD400C18383 /* UIButton+WebCache.m in Sources */,
 				60A35C741FB46CD400C18383 /* UIImageView+WebCache.m in Sources */,
-				60A35C2C1FB46B2D00C18383 /* UITableView+XHWebImageAutoSize.m in Sources */,
 				60A35C6B1FB46CD400C18383 /* SDWebImageManager.m in Sources */,
 				0C0175BC1DDBFDD5000299B6 /* AppDelegate.m in Sources */,
 				60A35C691FB46CD400C18383 /* SDWebImageGIFCoder.m in Sources */,
 				0CD98AA51DE1AB4F008ADDCA /* DemoVC1.m in Sources */,
 				60A35C6A1FB46CD400C18383 /* SDWebImageImageIOCoder.m in Sources */,
-				60A35C281FB46B2D00C18383 /* XHWebImageAutoSize.m in Sources */,
 				60A35C761FB46CD400C18383 /* UIView+WebCacheOperation.m in Sources */,
-				60A35C291FB46B2D00C18383 /* XHWebImageAutoSizeCache.m in Sources */,
 				0CD98AAA1DE1ABBF008ADDCA /* DemoVC2.m in Sources */,
 				60A35C621FB46CD400C18383 /* SDImageCache.m in Sources */,
+				6090418E1FB53DE700E4EBA6 /* UITableView+XHWebImageAutoSize.m in Sources */,
+				609041901FB53DE700E4EBA6 /* XHWebImageAutoSizeCache.m in Sources */,
 				60A35C731FB46CD400C18383 /* UIImageView+HighlightedWebCache.m in Sources */,
 				0CD98A951DE19E33008ADDCA /* WaterfallColectionLayout.m in Sources */,
 				60A35C641FB46CD400C18383 /* SDWebImageCoder.m in Sources */,
@@ -486,11 +486,12 @@
 				0CD98A961DE19E33008ADDCA /* RootVC.m in Sources */,
 				0C0175B91DDBFDD5000299B6 /* main.m in Sources */,
 				60A35C701FB46CD400C18383 /* UIImage+GIF.m in Sources */,
+				6090418F1FB53DE700E4EBA6 /* XHWebImageAutoSize.m in Sources */,
+				609041911FB53DE700E4EBA6 /* XHWebImageAutoSizeConst.m in Sources */,
 				60A35C6C1FB46CD400C18383 /* SDWebImagePrefetcher.m in Sources */,
 				60A35C6D1FB46CD400C18383 /* SDWebImageWebPCoder.m in Sources */,
 				60A35C601FB46CD400C18383 /* NSData+ImageContentType.m in Sources */,
 				60A35C711FB46CD400C18383 /* UIImage+MultiFormat.m in Sources */,
-				60A35C2A1FB46B2D00C18383 /* XHWebImageAutoSizeConst.m in Sources */,
 				60A35C631FB46CD400C18383 /* SDImageCacheConfig.m in Sources */,
 				60A35C751FB46CD400C18383 /* UIView+WebCache.m in Sources */,
 				60A35C6F1FB46CD400C18383 /* UIImage+ForceDecode.m in Sources */,
@@ -499,7 +500,7 @@
 				60A35C661FB46CD400C18383 /* SDWebImageCompat.m in Sources */,
 				60A35C721FB46CD400C18383 /* UIImage+WebP.m in Sources */,
 				0CD98A9B1DE1A164008ADDCA /* DemoVC2Cell.m in Sources */,
-				60A35C2B1FB46B2D00C18383 /* UICollectionView+XHWebImageAutoSize.m in Sources */,
+				6090418D1FB53DE700E4EBA6 /* UICollectionView+XHWebImageAutoSize.m in Sources */,
 				0CD98AB31DE1B293008ADDCA /* NewsModel.m in Sources */,
 				0CD98A911DE19E33008ADDCA /* DemoVC3Cell.m in Sources */,
 				60A35C5F1FB46CD400C18383 /* MKAnnotationView+WebCache.m in Sources */,
