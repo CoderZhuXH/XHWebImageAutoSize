@@ -41,6 +41,7 @@ static NSString *const cellId = @"DemoVC1Cell";
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *url = self.dataArray[indexPath.row];
+    
     /**
      *  参数1:图片URL
      *  参数2:imageView 宽度

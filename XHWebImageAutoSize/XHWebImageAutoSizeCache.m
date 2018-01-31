@@ -7,39 +7,8 @@
 //  https://github.com/CoderZhuXH/XHWebImageAutoSize
 
 #import "XHWebImageAutoSizeCache.h"
-#import <CommonCrypto/CommonDigest.h>
+#import "NSString+XHWebImageAutoSize.h"
 #import "XHWebImageAutoSizeConst.h"
-
-@interface NSString (CacheFileName)
-
-@property(nonatomic,copy ,readonly)NSString * sizeKeyName;
-@property(nonatomic,copy ,readonly)NSString * reloadKeyName;
-@property(nonatomic,copy ,readonly)NSString * md5String;
-
-@end
-
-@implementation NSString (CacheKeyName)
-
--(NSString *)sizeKeyName{
-    NSString *keyName = [NSString stringWithFormat:@"sizeKeyName:%@",self];
-    return keyName.md5String;
-}
--(NSString *)reloadKeyName{
-    NSString *keyName = [NSString stringWithFormat:@"reloadKeyName:%@",self];
-    return keyName.md5String;
-}
--(NSString *)md5String{
-    const char *value = [self UTF8String];
-    unsigned char outputBuffer[CC_MD5_DIGEST_LENGTH];
-    CC_MD5(value, (CC_LONG)strlen(value), outputBuffer);
-    NSMutableString *outputString = [[NSMutableString alloc] initWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
-    for(NSInteger count = 0; count < CC_MD5_DIGEST_LENGTH; count++){
-        [outputString appendFormat:@"%02x",outputBuffer[count]];
-    }
-    return outputString;
-}
-
-@end
 
 @interface XHWebImageAutoSizeCache()
 
@@ -93,7 +62,7 @@
     if(!key) return NO;
     NSString *stateString = @"0";
     if(state) stateString = @"1";
-    NSDictionary *stateDict = @{@"reloadSate":stateString};
+    NSDictionary *stateDict = @{@"reloadState":stateString};
     NSData *data = [self dataFromDict:stateDict];
     NSString *keyName = key.reloadKeyName;
     [self.memCache setObject:data forKey:keyName];
@@ -131,7 +100,7 @@
        data = [self dataFromDiskCacheForKey:keyName isSizeCache:NO];
     }
     NSDictionary *reloadDict = [self dictFromData:data];
-    NSInteger state = [reloadDict[@"reloadSate"] integerValue];
+    NSInteger state = [reloadDict[@"reloadState"] integerValue];
     if(state ==1) return YES;
     return NO;
 }

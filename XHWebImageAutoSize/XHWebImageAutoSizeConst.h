@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-// 过期提醒
 #define XHWebImageAutoSizeDeprecated(instead) NS_DEPRECATED(2_0, 2_0, 2_0, 2_0, instead)
 
 #ifdef DEBUG

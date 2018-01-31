@@ -77,6 +77,17 @@
 +(CGFloat)imageHeightForURL:(NSURL *)url layoutWidth:(CGFloat)layoutWidth estimateHeight:(CGFloat )estimateHeight;
 
 /**
+ *  Get image width
+ *
+ *  @param url            imageURL
+ *  @param layoutHeight   layoutHeight
+ *  @param estimateWidth estimateWidth(default 90)
+ *
+ *  @return imageHeight
+ */
++(CGFloat)imageWidthForURL:(NSURL *)url layoutHeight:(CGFloat)layoutHeight estimateWidth:(CGFloat )estimateWidth;
+
+/**
  *  Get image size from cache,query the disk cache synchronously after checking the memory cache
  *
  *  @param url imageURL
@@ -94,23 +105,6 @@
  */
 +(void)storeImageSize:(UIImage *)image forURL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock;
 
-/**
- *  Get reload state from cache,query the disk cache synchronously after checking the memory cache
- *
- *  @param url imageURL
- *
- *  @return reloadState
- */
-+(BOOL)reloadStateFromCacheForURL:(NSURL *)url;
-
-/**
- *  Store an reloadState into memory and disk cache
- *
- *  @param state          reloadState
- *  @param url            imageURL
- *  @param completedBlock An block that should be executed after the reloadState has been saved (optional)
- */
-+(void)storeReloadState:(BOOL)state forURL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock;
 ```
 
 *   2.tableView reload

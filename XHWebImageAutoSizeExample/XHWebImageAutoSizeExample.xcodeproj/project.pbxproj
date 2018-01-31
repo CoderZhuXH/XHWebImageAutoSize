@@ -61,6 +61,7 @@
 		60A35C741FB46CD400C18383 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A35C5A1FB46CD300C18383 /* UIImageView+WebCache.m */; };
 		60A35C751FB46CD400C18383 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A35C5C1FB46CD300C18383 /* UIView+WebCache.m */; };
 		60A35C761FB46CD400C18383 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A35C5E1FB46CD300C18383 /* UIView+WebCacheOperation.m */; };
+		60DCAAA62021957200E80282 /* NSString+XHWebImageAutoSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 60DCAAA52021957200E80282 /* NSString+XHWebImageAutoSize.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +164,8 @@
 		60A35C5C1FB46CD300C18383 /* UIView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCache.m"; sourceTree = "<group>"; };
 		60A35C5D1FB46CD300C18383 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		60A35C5E1FB46CD300C18383 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		60DCAAA42021957200E80282 /* NSString+XHWebImageAutoSize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+XHWebImageAutoSize.h"; sourceTree = "<group>"; };
+		60DCAAA52021957200E80282 /* NSString+XHWebImageAutoSize.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+XHWebImageAutoSize.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -284,16 +287,18 @@
 		609041821FB53DE700E4EBA6 /* XHWebImageAutoSize */ = {
 			isa = PBXGroup;
 			children = (
-				609041831FB53DE700E4EBA6 /* UICollectionView+XHWebImageAutoSize.h */,
-				609041841FB53DE700E4EBA6 /* UICollectionView+XHWebImageAutoSize.m */,
-				609041851FB53DE700E4EBA6 /* UITableView+XHWebImageAutoSize.h */,
-				609041861FB53DE700E4EBA6 /* UITableView+XHWebImageAutoSize.m */,
 				609041871FB53DE700E4EBA6 /* XHWebImageAutoSize.h */,
 				609041881FB53DE700E4EBA6 /* XHWebImageAutoSize.m */,
 				609041891FB53DE700E4EBA6 /* XHWebImageAutoSizeCache.h */,
 				6090418A1FB53DE700E4EBA6 /* XHWebImageAutoSizeCache.m */,
+				609041831FB53DE700E4EBA6 /* UICollectionView+XHWebImageAutoSize.h */,
+				609041841FB53DE700E4EBA6 /* UICollectionView+XHWebImageAutoSize.m */,
+				609041851FB53DE700E4EBA6 /* UITableView+XHWebImageAutoSize.h */,
+				609041861FB53DE700E4EBA6 /* UITableView+XHWebImageAutoSize.m */,
 				6090418B1FB53DE700E4EBA6 /* XHWebImageAutoSizeConst.h */,
 				6090418C1FB53DE700E4EBA6 /* XHWebImageAutoSizeConst.m */,
+				60DCAAA42021957200E80282 /* NSString+XHWebImageAutoSize.h */,
+				60DCAAA52021957200E80282 /* NSString+XHWebImageAutoSize.m */,
 			);
 			name = XHWebImageAutoSize;
 			path = ../XHWebImageAutoSize;
@@ -483,6 +488,7 @@
 				60A35C641FB46CD400C18383 /* SDWebImageCoder.m in Sources */,
 				60A35C671FB46CD400C18383 /* SDWebImageDownloader.m in Sources */,
 				60A35C611FB46CD400C18383 /* NSImage+WebCache.m in Sources */,
+				60DCAAA62021957200E80282 /* NSString+XHWebImageAutoSize.m in Sources */,
 				0CD98A961DE19E33008ADDCA /* RootVC.m in Sources */,
 				0C0175B91DDBFDD5000299B6 /* main.m in Sources */,
 				60A35C701FB46CD400C18383 /* UIImage+GIF.m in Sources */,

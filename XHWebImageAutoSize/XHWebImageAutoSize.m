@@ -9,6 +9,7 @@
 #import "XHWebImageAutoSize.h"
 
 static CGFloat const estimateDefaultHeight = 100;
+static CGFloat const estimateDefaultWidth = 90;
 
 @implementation XHWebImageAutoSize
 
@@ -25,11 +26,24 @@ static CGFloat const estimateDefaultHeight = 100;
     return showHeight;
 }
 
-+(void)storeImageSize:(UIImage *)image forURL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock{
++(CGFloat)imageWidthForURL:(NSURL *)url layoutHeight:(CGFloat)layoutHeight estimateWidth:(CGFloat )estimateWidth{
+    CGFloat showWidth = estimateDefaultWidth;
+    if(estimateWidth) showWidth = estimateWidth;
+    if(!url || !layoutHeight) return showWidth;
+    CGSize size = [self imageSizeFromCacheForURL:url];
+    CGFloat imgWidth = size.width;
+    CGFloat imgHeight = size.height;
+    if(imgWidth>0 && imgHeight >0){
+        showWidth = layoutHeight/imgHeight*imgWidth;
+    }
+    return showWidth;
+}
+
++(void)storeImageSize:(UIImage *)image forURL:(NSURL *)url completed:(nullable XHWebImageAutoSizeCacheCompletionBlock)completedBlock{
     [[XHWebImageAutoSizeCache shardCache] storeImageSize:image forKey:[self cacheKeyForURL:url] completed:completedBlock];
 }
 
-+(void)storeReloadState:(BOOL)state forURL:(NSURL *)url completed:(XHWebImageAutoSizeCacheCompletionBlock)completedBlock{
++(void)storeReloadState:(BOOL)state forURL:(NSURL *)url completed:(nullable XHWebImageAutoSizeCacheCompletionBlock)completedBlock{
     [[XHWebImageAutoSizeCache shardCache] storeReloadState:state forKey:[self cacheKeyForURL:url] completed:completedBlock];
 }
 
